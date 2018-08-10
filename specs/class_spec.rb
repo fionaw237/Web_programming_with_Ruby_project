@@ -1,11 +1,11 @@
 require("minitest/autorun")
 require("minitest/rg")
-require_relative("../models/class")
+require_relative("../models/gymclass")
 
-class ClassTest < MiniTest::Test
+class GymClassTest < MiniTest::Test
 
   def setup()
-    @class1 = Class.new(
+    @class1 = GymClass.new(
       {
         'name' => 'Spin',
         'capacity' => 20,
