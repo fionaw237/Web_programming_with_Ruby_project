@@ -10,7 +10,8 @@ CREATE TABLE members (
   last_name VARCHAR(255),
   member_type VARCHAR(255),
   phone_number NUMERIC,
-  address VARCHAR(255)
+  address VARCHAR(255),
+  dob VARCHAR(255)
 );
 
 CREATE table classes (
