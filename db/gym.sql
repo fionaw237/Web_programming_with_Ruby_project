@@ -31,12 +31,12 @@ CREATE TABLE sessions (
   start_time VARCHAR(255),
   end_time VARCHAR(255),
   spaces VARCHAR(255),
-  class_id INTEGER REFERENCES classes(id) ON DELETE CASCADE,
+  gymclass_id INTEGER REFERENCES gym_classes(id) ON DELETE CASCADE,
   studio_id INTEGER REFERENCES studios(id) ON DELETE CASCADE
 );
 
 CREATE TABLE bookings (
   id SERIAL PRIMARY KEY,
   member_id INTEGER REFERENCES members(id) ON DELETE CASCADE,
-  staging_id INTEGER REFERENCES stagings(id) ON DELETE CASCADE
+  session_id INTEGER REFERENCES sessions(id) ON DELETE CASCADE
 );
