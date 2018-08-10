@@ -17,6 +17,7 @@ CREATE TABLE members (
 CREATE table classes (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
+  capacity INTEGER,
   description VARCHAR(255)
 );
 
