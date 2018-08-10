@@ -19,6 +19,18 @@ class Member
     return "#{@first_name} #{@last_name}"
   end
 
+  def save()
+    sql = 'INSERT INTO members (first_name, last_name, member_type, phone_number, address, dob) VALUES ($1, $2, $3, $4 , $5, $6) RETURNING id'
+    values = [@first_name, @last_name, @member_type, @phone_number, @address, @dob]
+    result = SqlRunner.run(sql, values).first()
+    @id = result['id'].to_i()
+  end
+
+  def self.delete_all()
+    sql = 'DELETE FROM members'
+    SqlRunner.run(sql)
+  end
+
 
 
 end
