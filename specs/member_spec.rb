@@ -30,15 +30,19 @@ class MemberTest < MiniTest::Test
   end
 
   def test_has_phone_number()
-    assert_equal('07123456789', @member1.phone_number())
+    assert_equal("07123456789", @member1.phone_number())
   end
 
   def test_has_address()
-    assert_equal('25 Some Street, Dundee, DD2 2FF', @member1.address())
+    assert_equal("25 Some Street, Dundee, DD2 2FF", @member1.address())
   end
 
   def test_has_dob()
-    assert_equal('15/05/1986', @member1.dob())
+    assert_equal("15/05/1986", @member1.dob())
+  end
+
+  def test_has_pretty_name()
+    assert_equal("Fiona Wilson", @member1.pretty_name())
   end
 
 end

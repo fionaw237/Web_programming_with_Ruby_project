@@ -15,6 +15,10 @@ class Member
     @dob = options['dob']
   end
 
+  def pretty_name()
+    return "#{@first_name} #{@last_name}"
+  end
+
 
 
 end
