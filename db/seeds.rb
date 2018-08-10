@@ -1,6 +1,6 @@
 require('pry-byebug')
 require_relative('../models/member')
-require_relative('../models/class')
+require_relative('../models/gymclass')
 
 
 Member.delete_all()
