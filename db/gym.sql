@@ -1,7 +1,7 @@
 DROP table IF EXISTS bookings;
-DROP table IF EXISTS stagings;
+DROP table IF EXISTS sessions;
 DROP table IF EXISTS members;
-DROP table IF EXISTS classes;
+DROP table IF EXISTS gym_classes;
 DROP table IF EXISTS studios;
 
 CREATE TABLE members (
@@ -14,7 +14,7 @@ CREATE TABLE members (
   dob VARCHAR(255)
 );
 
-CREATE table classes (
+CREATE table gym_classes (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
   capacity INTEGER,
@@ -26,7 +26,7 @@ CREATE TABLE studios (
   name VARCHAR(255)
 );
 
-CREATE TABLE stagings (
+CREATE TABLE sessions (
   id SERIAL PRIMARY KEY,
   start_time VARCHAR(255),
   end_time VARCHAR(255),
