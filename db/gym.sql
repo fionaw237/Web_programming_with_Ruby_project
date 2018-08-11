@@ -28,6 +28,7 @@ CREATE TABLE studios (
 
 CREATE TABLE sessions (
   id SERIAL PRIMARY KEY,
+  day VARCHAR(255),
   start_time VARCHAR(255),
   end_time VARCHAR(255),
   spaces VARCHAR(255),
