@@ -124,49 +124,12 @@ session2.save()
 session3.save()
 session4.save()
 
-booking1 = Booking.new(
-  {
-    'member_id' => member1.id(),
-    'session_id' => session1.id()
-  }
-)
-
-booking2 = Booking.new(
-  {
-    'member_id' => member2.id(),
-    'session_id' => session1.id()
-  }
-)
-
-booking3 = Booking.new(
-  {
-    'member_id' => member1.id(),
-    'session_id' => session4.id()
-  }
-)
-
-booking4 = Booking.new(
-  {
-    'member_id' => member3.id(),
-    'session_id' => session3.id()
-  }
-)
-
-booking5 = Booking.new(
-  {
-    'member_id' => member3.id(),
-    'session_id' => session2.id()
-  }
-)
-
-booking1.save()
-booking2.save()
-booking3.save()
-booking4.save()
-booking5.save()
-
-
-
+member1.book_class(session1)
+member1.book_class(session4)
+member2.book_class(session2)
+member2.book_class(session3)
+member3.book_class(session1)
+member3.book_class(session3)
 
 
 binding.pry

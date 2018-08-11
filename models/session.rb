@@ -48,6 +48,11 @@ class Session
     return results.map {|member| Member.new(member)}
   end
 
+  def add_member()
+    @spaces -= 1
+    update()
+  end
+
   def self.all()
     sql = 'SELECT * FROM sessions'
     sessions = SqlRunner.run(sql)

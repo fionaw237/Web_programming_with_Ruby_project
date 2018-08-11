@@ -38,10 +38,24 @@ class Member
     SqlRunner.run(sql, values)
   end
 
+  def book_class(session)
+    booking = Booking.new('member_id' => @id, 'session_id' => session.id())
+    booking.save()
+    session.add_member()
+    update()
+  end
+
   def self.delete_all()
     sql = 'DELETE FROM members'
     SqlRunner.run(sql)
   end
+
+  def self.all()
+    sql = 'SELECT * FROM members'
+    members = SqlRunner.run(sql)
+    return members.map {|member| Member.new(member)}
+  end
+
 
 
 
