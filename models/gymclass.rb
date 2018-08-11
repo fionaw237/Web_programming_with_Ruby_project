@@ -34,4 +34,10 @@ class GymClass
     SqlRunner.run(sql)
   end
 
+  def self.all()
+    sql = 'SELECT * FROM gym_classes'
+    classes = SqlRunner.run(sql)
+    return classes.map {|gymclass| GymClass.new(gymclass)}
+  end
+
 end
