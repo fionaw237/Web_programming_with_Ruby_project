@@ -39,5 +39,11 @@ class Session
     SqlRunner.run(sql, values)
   end
 
+  def self.all()
+    sql = 'SELECT * FROM sessions'
+    sessions = SqlRunner.run(sql)
+    return sessions.map {|session| Session.new(session)}
+  end
+
 
 end
