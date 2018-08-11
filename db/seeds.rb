@@ -3,6 +3,7 @@ require_relative('../models/member')
 require_relative('../models/gymclass')
 require_relative('../models/session')
 require_relative('../models/studio')
+require_relative('../models/booking')
 
 
 Member.delete_all()
@@ -51,9 +52,29 @@ session1 = Session.new(
     'spaces' => 20
   }
 )
+
+session2 = Session.new(
+  {
+    'gymclass_id' => class1.id(),
+    'studio_id' => studio1.id(),
+    'day' => 'Mon',
+    'start_time' => '14:00',
+    'end_time' => '15:00',
+    'spaces' => 20
+  }
+)
+
 session1.save()
+session2.save()
 
+booking1 = Booking.new(
+  {
+    'member_id' => member1.id(),
+    'session_id' => session1.id()
+  }
+)
 
+booking1.save()
 
 
 
