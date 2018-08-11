@@ -7,8 +7,8 @@ class Session
 
   def initialize(options)
     @id = options['id'].to_i() if options['id']
-    @gymclass_id = options['gymclass_id']
-    @studio_id = options['studio_id']
+    @gymclass_id = options['gymclass_id'].to_i()
+    @studio_id = options['studio_id'].to_i()
     @day = options['day']
     @start_time = options['start_time']
     @end_time = options['end_time']
