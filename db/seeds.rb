@@ -1,10 +1,14 @@
 require('pry-byebug')
 require_relative('../models/member')
 require_relative('../models/gymclass')
+require_relative('../models/session')
+require_relative('../models/studio')
 
 
 Member.delete_all()
 GymClass.delete_all()
+Studio.delete_all()
+
 
 member1 = Member.new(
   {
@@ -28,6 +32,31 @@ class1 = GymClass.new(
 )
 
 class1.save()
+
+studio1 = Studio.new(
+  {
+    'name' => 'Studio 1'
+  }
+)
+
+studio1.save()
+
+session1 = Session.new(
+  {
+    'gymclass_id' => class1.id(),
+    'studio_id' => studio1.id(),
+    'day' => 'Mon',
+    'start_time' => '08:00',
+    'end_time' => '09:00',
+    'spaces' => 20
+  }
+)
+session1.save()
+
+
+
+
+
 
 
 binding.pry
