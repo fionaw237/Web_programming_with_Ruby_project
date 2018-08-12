@@ -38,4 +38,9 @@ class SessionTest < MiniTest::Test
     assert_equal(20, @session1.spaces())
   end
 
+  def test_has_pretty_time()
+    time = "08:00 - 09:00"
+    assert_equal(time, @session1.pretty_time())
+  end
+
 end
