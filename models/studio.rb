@@ -32,5 +32,12 @@ class Studio
     SqlRunner.run(sql)
   end
 
+  def self.find(id)
+    sql = 'SELECT * FROM studios WHERE id = $1'
+    values = [id]
+    result = SqlRunner.run(sql, values).first()
+    return Studio.new(result)
+  end
+
 
 end
