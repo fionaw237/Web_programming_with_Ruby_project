@@ -1,0 +1,7 @@
+<h1>Members attending <%= @session.gymclass.name()%> at <%= @session.pretty_time()%> on <%= @session.day()%></h1>
+
+<% counter = 1 %>
+<% @session.members().each() do |member| %>
+<p><%= counter %>) <%= member.pretty_name() %></p>
+<% counter += 1 %>
+<% end %>

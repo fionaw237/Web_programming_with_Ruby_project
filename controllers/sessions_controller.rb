@@ -10,6 +10,11 @@ get '/gym/:id' do
   erb(:"sessions/show")
 end
 
+get '/gym/:id/members' do
+  @session = Session.find(params[:id])
+  erb(:"sessions/members")
+end
+
 #delete session
 post '/gym/:id/delete' do
   @session = Session.find(params[:id])
