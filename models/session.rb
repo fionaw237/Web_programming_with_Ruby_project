@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require_relative('gymclass.rb')
 
 class Session
 
@@ -64,6 +65,17 @@ class Session
     values = [@gymclass_id]
     result = SqlRunner.run(sql, values).first()
     return GymClass.new(result)
+  end
+
+  def pretty_time()
+    return "#{@start_time} - #{@end_time}"
+  end
+
+  def self.find(id)
+    sql = 'SELECT * FROM sessions WHERE id = $1'
+    values = [id]
+    result = SqlRunner.run(sql, values).first()
+    return Session.new(result)
   end
 
 
