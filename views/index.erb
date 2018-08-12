@@ -1,6 +1,9 @@
 <h1>Class Timetable</h1>
 
-<% @gymclasses.each do |gymclass| %>
-<p>Class: <%= gymclass.name() %> </p>
+<% @sessions.each do |session| %>
+<p> <%= session.day() %> </p>
+<p> <%= session.pretty_time() %> </p>
+<p>Class: <%= session.gymclass.name() %> </p>
+<p> <a href="/gym/<%= session.id %>">Show details</a></p>
 <hr>
 <% end %>
