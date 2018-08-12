@@ -1,1 +1,14 @@
-<h1>hi!</h1>
+<p>Class: <%= @session.gymclass.name() %> </p>
+<p> Day: <%= @session.day() %> </p>
+<p> Time: <%= @session.pretty_time() %> </p>
+<p> Venue: <%= Studio.find(@session.studio_id).name() %></p>
+<p> Spaces: <%= @session.spaces()
+%></p>
+
+<form action="/gym/<%= @session.id %>/delete" method="post">
+  <input type="submit" value="Delete session">
+</form>
+
+<form action="/gym/<%= @session.id%>/edit" method="get">
+  <input type="submit" value="Edit session">
+</form>

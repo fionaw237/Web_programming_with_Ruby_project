@@ -3,7 +3,9 @@
 <% @sessions.each do |session| %>
 <p> <%= session.day() %> </p>
 <p> <%= session.pretty_time() %> </p>
-<p>Class: <%= session.gymclass.name() %> </p>
-<p> <a href="/gym/<%= session.id %>">Show details</a></p>
+<p> <%= session.gymclass.name() %> </p>
+<p> <%= session.spaces()
+%> spaces left</p>
+<p> <a href="/gym/<%= session.id %>"> View more details</a></p>
 <hr>
 <% end %>

@@ -1,0 +1,25 @@
+<form action="/gym/<%= @session.id()%>" method="post">
+
+  <!-- <label for="day"> Day: </label>
+  <select id="day-select" name="day" value ="<%= @session.day() %>">
+    <% days = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"] %>
+    <% days.each do |new_day|  %>
+    <option value= <%="#{new_day}"%>><%= new_day  %> </option>
+    <% end %>
+  </select>
+
+  <br><br> -->
+
+  <label for="start-time"> Start time: </label>
+  <input id ="start-time" type="text" name="start_time" value="<%= @session.start_time() %>">
+
+  <!-- <br><br>
+
+  <label for="end-time"> End time: </label>
+  <input id ="end-time" type="text" name="end_time" value="<%= @session.end_time() %>">
+
+  <br><br> -->
+
+  <input type="submit" value="Confirm changes">
+
+</form>
