@@ -59,5 +59,12 @@ class Session
     return sessions.map {|session| Session.new(session)}
   end
 
+  def gymclass()
+    sql = "SELECT * FROM gym_classes WHERE id = $1"
+    values = [@gymclass_id]
+    result = SqlRunner.run(sql, values).first()
+    return GymClass.new(result)
+  end
+
 
 end
