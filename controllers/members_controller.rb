@@ -14,3 +14,9 @@ get '/gym/members/:id' do
   @member = Member.find(params[:id])
   erb(:"members/show")
 end
+
+post '/gym/members/:id/delete' do
+  @member= Member.find(params[:id])
+  @member.delete()
+  redirect "/gym/members"
+end

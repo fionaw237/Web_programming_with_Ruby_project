@@ -1,1 +1,14 @@
-<h1>hi!</h1>
+<p>Name: <%= @member.pretty_name() %> </p>
+<p> Membership type: <%= @member.member_type() %> </p>
+<p> Phone number: <%= @member.phone_number() %> </p>
+<p> Address: <%= @member.address() %></p>
+<p> Date of birth: <%= @member.dob()
+%></p>
+
+<form action="/gym/members/<%= @member.id %>/delete" method="post">
+  <input type="submit" value="Delete member">
+</form>
+
+<form action="/gym/members/<%= @member.id%>/edit" method="get">
+  <input type="submit" value="Edit member">
+</form>
