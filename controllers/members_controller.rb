@@ -37,3 +37,16 @@ post '/gym/members/:id/delete' do
   @member.delete()
   redirect "/gym/members"
 end
+
+# Edit
+get '/gym/members/:id/edit' do
+  @member = Member.find(params[:id])
+  erb(:"members/edit")
+end
+
+# Update
+post '/gym/members/:id' do
+  @member = Member.new(params)
+  @member.update()
+  erb(:"members/show")
+end
