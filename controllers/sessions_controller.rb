@@ -14,7 +14,9 @@ end
 
 #create
 post '/gym' do
+  spaces = GymClass.find(params[:gymclass_id]).capacity()
   @session = Session.new(params)
+  @session.spaces = spaces
   @session.save()
   redirect "/gym"
 end
