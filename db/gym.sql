@@ -9,7 +9,7 @@ CREATE TABLE members (
   first_name VARCHAR(255),
   last_name VARCHAR(255),
   member_type VARCHAR(255),
-  phone_number NUMERIC,
+  phone_number VARCHAR(255),
   address VARCHAR(255),
   dob VARCHAR(255)
 );
