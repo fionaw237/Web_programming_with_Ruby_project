@@ -6,17 +6,27 @@
 %></p>
 
 <form action="/gym/<%= @session.id%>/add_member" method="get">
+  <% if @session.spaces > 0 %>
   <input type="submit" value="Add member to session">
+  <% else %>
+  <p>Class full!</p>
+  <% end %>
 </form>
+
 <br/>
+
 <form action="/gym/<%= @session.id%>/members" method="get">
   <input type="submit" value="Show members attending">
 </form>
+
 <br/>
+
 <form action="/gym/<%= @session.id %>/delete" method="post">
   <input type="submit" value="Delete session">
 </form>
+
 <br>
+
 <form action="/gym/<%= @session.id%>/edit" method="get">
   <input type="submit" value="Edit session">
 </form>

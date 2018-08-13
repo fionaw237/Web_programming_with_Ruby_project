@@ -8,6 +8,10 @@
 
 <br>
 
-<form action="/gym/<%= @session.id%>/add_member" method="get">
-  <input type="submit" value="Add member to session">
-</form>
+<% if @session.spaces > 0 %>
+  <form action="/gym/<%= @session.id%>/add_member" method="get">
+    <input type="submit" value="Add member to session">
+  </form>
+<% else %>
+  <p>Class full!</p>
+<% end %>

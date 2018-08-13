@@ -1,5 +1,6 @@
 <form action="/gym/:id/add_member" method="post">
 
+  <% if @session.spaces > 0 %>
   <label for="member-select"></label>
   <select id="member-select" name="new_member_id">
     <% @members.each do |member| %>
@@ -9,8 +10,9 @@
 
   <label for="session-id"></label>
   <input id="session-id" type="hidden" name="edited_session_id" value="<%= @session.id %>" readonly>
-
-
   <input type="submit" value="Add member">
+  <% else %>
+  <p>Class full!</p>
+  <% end %>
 
 </form>
