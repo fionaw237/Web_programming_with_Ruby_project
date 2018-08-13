@@ -1,0 +1,11 @@
+<form action="/gym/:id" method="post">
+  <label for="member-select"></label>
+  <select id="member-select" name="member.id">
+    <% @members.each do |member| %>
+      <option value= <%="#{member.id}"%>><%= member.pretty_name() %> </option>
+    <% end %>
+  </select>
+
+  <input type="submit" value="Add member">
+
+</form>
