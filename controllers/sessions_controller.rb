@@ -22,16 +22,15 @@ post '/gym/:id/delete' do
   redirect "/gym"
 end
 
-# # Edit session
-# get '/gym/:id/edit' do
-#   @session = Session.find(params[:id])
-#   erb(:"sessions/edit")
-# end
-#
-# # Update session
-# post '/gym/:id' do
-#   @session = Session.new(params)
-#   @session.update()
-#   erb(:"sessions/show")
-#   #redirect "/gym"
-# end
+# Edit
+get '/gym/:id/edit' do
+  @session = Session.find(params[:id])
+  erb(:"sessions/edit")
+end
+
+# Update
+post '/gym/:id' do
+  @session = Session.new(params)
+  @session.update()
+  erb(:"sessions/show")
+end
