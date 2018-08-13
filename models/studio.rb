@@ -39,5 +39,11 @@ class Studio
     return Studio.new(result)
   end
 
+  def self.all()
+    sql = 'SELECT * FROM studios'
+    studios = SqlRunner.run(sql)
+    return studios.map {|studio| Studio.new(studio)}
+  end
+
 
 end
