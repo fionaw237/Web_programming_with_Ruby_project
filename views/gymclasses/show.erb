@@ -1,0 +1,14 @@
+<h1>Details for <%= @gymclass.name() %></h1>
+
+<p>Capacity: <%= @gymclass.capacity %></p>
+<p> Description: <%= @gymclass.description() %> </p>
+
+<form action="/gym/classes/<%= @gymclass.id %>/delete" method="post">
+  <input type="submit" value="Delete class">
+</form>
+
+<br>
+
+<form action="/gym/classes/<%= @gymclass.id%>/edit" method="get">
+  <input type="submit" value="Edit class">
+</form>
