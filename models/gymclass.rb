@@ -42,4 +42,11 @@ class GymClass
     return classes.map {|gymclass| GymClass.new(gymclass)}
   end
 
+  def self.find(id)
+    sql = 'SELECT * FROM gym_classes WHERE id = $1'
+    values = [id]
+    result = SqlRunner.run(sql, values).first()
+    return GymClass.new(result)
+  end
+
 end
