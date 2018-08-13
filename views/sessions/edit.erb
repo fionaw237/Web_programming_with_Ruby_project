@@ -17,9 +17,13 @@
 
   <label for="day-select"> Day: </label>
   <select id="day-select" name="day" value ="<%= @session.day() %>">
+    <option value="<%= @session.day() %>" selected> <%= @session.day() %> </option>
+
     <% days = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"] %>
-    <% days.each do |new_day|  %>
-      <option value= <%="#{new_day}"%>><%= new_day  %> </option>
+    <% days.each do |day_name|  %>
+      <% unless day_name == @session.day() %>
+        <option value= <%="#{day_name}"%> ><%= day_name  %> </option>
+      <% end %>
     <% end %>
   </select>
 
