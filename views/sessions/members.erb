@@ -5,3 +5,9 @@
 <p><%= counter %>) <%= member.pretty_name() %></p>
 <% counter += 1 %>
 <% end %>
+
+<br>
+
+<form action="/gym/<%= @session.id%>/add_member" method="get">
+  <input type="submit" value="Add member to session">
+</form>
