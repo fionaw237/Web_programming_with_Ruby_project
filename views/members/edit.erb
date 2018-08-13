@@ -7,21 +7,35 @@
 <input id= "last-name" type="text" name="last_name" value="<%= @member.last_name%>">
 <br>
 <br>
+
+
+
 <label for="membership-select"> Membership type: </label>
-<select id="membership-select" name="member_type" value = "<%= @member.member_type() %>">
+<select id="membership-select" name="member_type">
+  <% if @member.member_type() == "standard"%>
+    <option value="standard" selected>standard</option>
+    <option value="premium">premium</option>
+  <% else %>
   <option value="standard">standard</option>
-  <option value="premium">premium</option>
+  <option value="premium" selected>premium</option>
+  <% end %>
 </select>
+
 <br/>
 <br/>
+
 <label for="phone-number"> Phone number: </label>
 <input id= "phone-number" type="text" name="phone_number" value="<%= @member.phone_number%>">
+
 <br/>
 <br/>
+
 <label for="address"> Address: </label>
 <input id= "address" type="text" name="address" value="<%= @member.address%>">
+
 <br/>
 <br/>
+
 <label for="dob"> Date of birth: </label>
 <input id= "dob" type="text" name="dob" value="<%= @member.dob%>">
 
