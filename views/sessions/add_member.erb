@@ -1,10 +1,15 @@
-<form action="/gym/:id" method="post">
+<form action="/gym/:id/add_member" method="post">
+
   <label for="member-select"></label>
-  <select id="member-select" name="member.id">
+  <select id="member-select" name="new_member_id">
     <% @members.each do |member| %>
-      <option value= <%="#{member.id}"%>><%= member.pretty_name() %> </option>
+      <option value="<%=member.id%>"><%= member.pretty_name() %> </option>
     <% end %>
   </select>
+
+  <label for="session-id"></label>
+  <input id="session-id" type="hidden" name="edited_session_id" value="<%= @session.id %>" readonly>
+
 
   <input type="submit" value="Add member">
 

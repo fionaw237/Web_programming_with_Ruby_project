@@ -31,6 +31,17 @@ get '/gym/:id/add_member' do
   erb(:"sessions/add_member")
 end
 
+#add member to session
+post '/gym/:id/add_member' do
+  #@session = Session.find(params[:id])
+  @member = Member.find(params[:new_member_id])
+  @session = Session.find(params[:edited_session_id])
+  @member.book_class(@session)
+  @session.update()
+  erb(:"sessions/members")
+  # redirect '/gym/:edited_session_id/members'
+end
+
 get '/gym/:id/members' do
   @session = Session.find(params[:id])
   erb(:"sessions/members")
