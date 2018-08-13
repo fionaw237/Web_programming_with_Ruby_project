@@ -18,7 +18,8 @@ CREATE table gym_classes (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
   capacity INTEGER,
-  description VARCHAR(255)
+  description VARCHAR(255),
+  image VARCHAR(255)
 );
 
 CREATE TABLE studios (

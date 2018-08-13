@@ -48,11 +48,13 @@ member1.save()
 member2.save()
 member3.save()
 
+
 class1 = GymClass.new(
   {
     'name' => 'Spin',
     'capacity' => 15,
-    'description' => 'bikes!'
+    'description' => 'bikes!',
+    'image' => "~/codeclan_work/ruby_project/public/images/Spin-Class.jpg"
   }
 )
 
@@ -60,7 +62,8 @@ class2 = GymClass.new(
   {
     'name' => 'Insanity',
     'capacity' => 20,
-    'description' => 'Insane!'
+    'description' => 'Insane!',
+    'image' => '~/codeclan_work/ruby_project/public/images/Insanity.jpg'
   }
 )
 
