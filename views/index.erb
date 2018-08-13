@@ -1,11 +1,16 @@
+
 <h1>Class Timetable</h1>
 
-<% @sessions.each do |session| %>
-<p> <%= session.day() %> </p>
-<p> <%= session.pretty_time() %> </p>
-<p> <%= session.gymclass.name() %> </p>
-<p> <%= session.spaces()
-%> spaces left</p>
-<p> <a href="/gym/<%= session.id %>"> View more details</a></p>
-<hr>
-<% end %>
+<div class="timetable">
+
+  <% @sessions.each do |session| %>
+  <p> <%= session.day() %> </p>
+  <p> <%= session.pretty_time() %> </p>
+  <p> <%= session.gymclass.name() %> </p>
+  <p> <%= session.spaces()
+  %> spaces left</p>
+  <p> <a href="/gym/<%= session.id %>"> View more details</a></p>
+  <hr>
+  <% end %>
+
+</div>

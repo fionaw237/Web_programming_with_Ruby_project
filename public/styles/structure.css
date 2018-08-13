@@ -1,10 +1,123 @@
 body {
-  /*background: black url('/images/background.jpg');
-  background-size: 100%;
-  background-repeat: no-repeat;*/
   /*color: red;*/
   background-color: lightgrey;
-  font-family: 'Merriweather', serif;
-  /*padding: 0px;
-  margin: 0px;*/
+  font-family: 'Helvetica', serif;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 0px;
+}
+
+/*#content {
+  background: black url('/images/sanfran.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}*/
+
+a:link {
+    color: steelblue;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: pink;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+section {
+  margin: 40px;
+}
+
+.title{
+	text-align:center;
+  font-size: 30pt;
+  margin:0px;
+  text-transform: uppercase;
+  font-family: "Verdana";
+	/*border-right:1px solid white;*/
+	/*width: 2em;
+	padding: 0px;
+	margin: 0px;
+	display: inline;
+	margin-right: 13.5em;*/
+}
+
+
+.timetable {
+  border: 1px solid #bbb;
+  margin: 15px;
+}
+
+/*.container {
+	margin: 3.0em;
+}*/
+
+/*.main {
+	margin: 4.0em;
+  background-color: black;
+}*/
+
+h1 {
+  font-family: 'Helvetica', serif;
+  margin: 20px;
+  padding: 0px;
+  text-align: center;
+}
+
+nav {
+  text-align: center;
+	font-weight: bold;
+	border-bottom: 1px solid #bbb;
+	padding-bottom:0px;
+	/*margin: 10px;*/
+}
+
+/*nav {
+  padding: 0px;
+  margin: 0px;
+  padding-right: 25px;
+}*/
+
+nav ul li {
+  padding: 10px;
+  margin: 10px;
+  /*margin-bottom: 0px;*/
+  text-transform: uppercase;
+}
+
+li {
+    /*float: right;*/
+    display: inline-flex;
+    border-right: 1px solid #bbb;
+
+}
+
+li:last-child {
+    border-right: none;
+}
+
+
+/*li a {
+    display: block;
+    padding: 15px;
+    background-color: #dddddd;
+}*/
+
+ul {
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none;
 }

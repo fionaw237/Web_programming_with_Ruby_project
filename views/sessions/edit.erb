@@ -1,5 +1,6 @@
 <h1>Edit session: <%= @session.gymclass.name()%> at <%= @session.pretty_time()%> on <%= @session.day()%></h1>
 
+
 <form action="/gym/<%= @session.id()%>" method="post">
 
 <!-- need to submit gymclass_id and studio_id when we execute the form but don't need these to be shown -->
