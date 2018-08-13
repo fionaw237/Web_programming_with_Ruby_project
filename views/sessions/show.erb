@@ -5,6 +5,10 @@
 <p> Spaces: <%= @session.spaces()
 %></p>
 
+<form action="/gym/<%= @session.id%>/add_member" method="get">
+  <input type="submit" value="Add member to session">
+</form>
+<br/>
 <form action="/gym/<%= @session.id%>/members" method="get">
   <input type="submit" value="Show members attending">
 </form>
