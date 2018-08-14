@@ -125,18 +125,21 @@ nav ul li {
   margin: 10px;
   /*margin-bottom: 0px;*/
   text-transform: uppercase;
+  display: inline-flex;
+  border-right: 2px solid #bbb;
 }
 
-li {
+/*li {
     /*float: right;*/
-    display: inline-flex;
-    border-right: 2px solid #bbb;
 
-}
+
+/*}*/
 
 li:last-child {
     border-right: none;
 }
+
+
 
 
 /*li a {
@@ -149,4 +152,8 @@ ul {
   padding: 0px;
   margin: 0px;
   list-style-type: none;
+}
+
+li {
+  list-style: none;
 }

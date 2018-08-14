@@ -1,4 +1,8 @@
 <h1>Members Index</h1>
+
+
+<% @members = @members.sort_by {|member| member.pretty_name()} %>
+
 <ul>
   <% @members.each do |member| %>
   <li> <a href="/gym/members/<%= member.id() %>"> <%= member.pretty_name() %></a> </li>

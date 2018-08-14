@@ -4,6 +4,8 @@
   <input type="submit" value="Add new class">
 </form>
 
+<% @gymclasses= @gymclasses.sort_by {|gymclass| gymclass.name()} %>
+
 <ol>
 <% @gymclasses.each do |gymclass| %>
 <li><a href="/gym/classes/<%= gymclass.id() %>"> <%= gymclass.name() %></a> </li>
