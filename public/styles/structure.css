@@ -20,7 +20,8 @@ html {
 }
 
 figure {
-  border: 1px solid #bbb;
+  border: 2px solid #bbb;
+  border-radius: 25px;
 }
 
 /*#content {
@@ -77,8 +78,10 @@ section {
 
 
 .timetable {
-  border: 1px solid #bbb;
-  margin: 15px;
+  border: 2px solid #bbb;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 25px;
 }
 
 /*.container {
@@ -101,7 +104,7 @@ h1 {
 nav {
   text-align: center;
 	font-weight: bold;
-	border-bottom: 1px solid #bbb;
+	border-bottom: 2px solid #bbb;
 	padding-bottom:0px;
 	/*margin: 10px;*/
 }
@@ -122,7 +125,7 @@ nav ul li {
 li {
     /*float: right;*/
     display: inline-flex;
-    border-right: 1px solid #bbb;
+    border-right: 2px solid #bbb;
 
 }
 
