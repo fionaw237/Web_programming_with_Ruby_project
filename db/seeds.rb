@@ -168,9 +168,13 @@ session1 = Session.new(
   {
     'gymclass_id' => spin.id(),
     'studio_id' => studio1.id(),
-    'day' => 'Mon',
-    'start_time' => '08:00',
-    'end_time' => '09:00',
+    'year' => '2018',
+    'month' => '08',
+    'day' => '20',
+    'start_hour' => '08',
+    'start_minute' => '00',
+    'end_hour' => '09',
+    'end_minute' => '00',
     'spaces' => spin.capacity()
   }
 )
@@ -179,9 +183,13 @@ session2 = Session.new(
   {
     'gymclass_id' => spin.id(),
     'studio_id' => studio1.id(),
-    'day' => 'Mon',
-    'start_time' => '14:00',
-    'end_time' => '15:00',
+    'year' => '2018',
+    'month' => '08',
+    'day' => '20',
+    'start_hour' => '14',
+    'start_minute' => '00',
+    'end_hour' => '15',
+    'end_minute' => '00',
     'spaces' => spin.capacity()
   }
 )
@@ -190,9 +198,13 @@ session3 = Session.new(
   {
     'gymclass_id' => insanity.id(),
     'studio_id' => studio1.id(),
-    'day' => 'Mon',
-    'start_time' => '09:00',
-    'end_time' => '10:00',
+    'year' => '2018',
+    'month' => '08',
+    'day' => '21',
+    'start_hour' => '09',
+    'start_minute' => '00',
+    'end_hour' => '10',
+    'end_minute' => '00',
     'spaces' => insanity.capacity()
   }
 )
@@ -201,12 +213,18 @@ session4 = Session.new(
   {
     'gymclass_id' => insanity.id(),
     'studio_id' => studio1.id(),
-    'day' => 'Mon',
-    'start_time' => '15:00',
-    'end_time' => '16:00',
+    'year' => '2018',
+    'month' => '08',
+    'day' => '21',
+    'start_hour' => '15',
+    'start_minute' => '00',
+    'end_hour' => '15',
+    'end_minute' => '45',
     'spaces' => insanity.capacity()
   }
 )
+
+
 
 session1.save()
 session2.save()
@@ -214,11 +232,11 @@ session3.save()
 session4.save()
 
 member1.book_class(session1)
-member1.book_class(session4)
-member2.book_class(session2)
-member2.book_class(session3)
-member3.book_class(session1)
-member3.book_class(session3)
+# member1.book_class(session4)
+# member2.book_class(session2)
+# member2.book_class(session3)
+# member3.book_class(session1)
+# member3.book_class(session3)
 
 
 binding.pry

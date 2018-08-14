@@ -5,7 +5,8 @@
   <table style="width:100%">
 
     <tr>
-      <th>Day/Time</th>
+      <th>Date</th>
+      <th>Time</th>
       <th>Class</th>
       <th>Spaces</th>
       <th> </th>
@@ -13,7 +14,8 @@
 
     <% @sessions.each do |session| %>
     <tr>
-      <td><%= session.day() %>, <%= session.pretty_time() %></td>
+      <td><%= session.day() %>/<%= session.month() %>/<%= session.year() %>
+      <td><%= session.pretty_time()  %></td>
       <td> <%= session.gymclass.name() %> </td>
       <td> <%= session.spaces() %> </td>
       <td><a href="/gym/<%= session.id %>"> View more details</a></td>

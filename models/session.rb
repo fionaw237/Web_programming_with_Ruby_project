@@ -4,33 +4,36 @@ require_relative('gymclass.rb')
 class Session
 
   attr_reader :id
-  attr_accessor :gymclass_id, :studio_id, :day, :start_time, :end_time, :spaces
+  attr_accessor :gymclass_id, :studio_id, :year, :month, :day, :start_hour, :start_minute, :end_hour, :end_minute, :spaces
 
   def initialize(options)
     @id = options['id'].to_i() if options['id']
     @gymclass_id = options['gymclass_id'].to_i()
     @studio_id = options['studio_id'].to_i()
+    @year = options['year']
+    @month = options['month']
     @day = options['day']
-    @start_time = options['start_time']
-    @end_time = options['end_time']
+    @start_hour = options['start_hour']
+    @start_minute = options['start_minute']
+    @end_hour = options['end_hour']
+    @end_minute = options['end_minute']
     @spaces = options['spaces'].to_i()
   end
 
   def save()
     sql = 'INSERT INTO sessions
-          (gymclass_id, studio_id, day, start_time, end_time,
-           spaces) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id'
-    values = [@gymclass_id, @studio_id, @day, @start_time, @end_time, @spaces]
+          (gymclass_id, studio_id, year, month, day, start_hour, start_minute, end_hour, end_minute, spaces)
+          VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING id'
+    values = [@gymclass_id, @studio_id, @year, @month, @day, @start_hour, @start_minute, @end_hour, @end_minute, @spaces]
     result = SqlRunner.run(sql, values).first()
     @id = result['id'].to_i()
   end
 
   def update()
     sql = 'UPDATE sessions SET
-          (gymclass_id, studio_id, day,
-          start_time, end_time, spaces) =
-          ($1, $2, $3, $4, $5, $6) WHERE id = $7'
-    values = [@gymclass_id, @studio_id, @day, @start_time, @end_time, @spaces, @id]
+          (gymclass_id, studio_id, year, month, day, start_hour, start_minute, end_hour, end_minute, spaces) =
+          ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) WHERE id = $11'
+    values = [@gymclass_id, @studio_id, @year, @month, @day, @start_hour, @start_minute, @end_hour, @end_minute, @spaces, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -68,7 +71,7 @@ class Session
   end
 
   def pretty_time()
-    return "#{@start_time} - #{@end_time}"
+    return "#{@start_hour}:#{@start_minute} - #{@end_hour}:#{@end_minute}"
   end
 
   def self.find(id)

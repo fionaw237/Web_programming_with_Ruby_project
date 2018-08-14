@@ -30,9 +30,13 @@ CREATE TABLE studios (
 
 CREATE TABLE sessions (
   id SERIAL PRIMARY KEY,
+  year VARCHAR(255),
+  month VARCHAR(255),
   day VARCHAR(255),
-  start_time VARCHAR(255),
-  end_time VARCHAR(255),
+  start_hour VARCHAR(255),
+  start_minute VARCHAR(255),
+  end_hour VARCHAR(255),
+  end_minute VARCHAR(255),
   spaces VARCHAR(255),
   gymclass_id INTEGER REFERENCES gym_classes(id) ON DELETE CASCADE,
   studio_id INTEGER REFERENCES studios(id) ON DELETE CASCADE
