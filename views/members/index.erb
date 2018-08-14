@@ -1,7 +1,6 @@
 <h1>Members Index</h1>
 
 <% @members.each do |member| %>
-<p> <%= member.pretty_name() %> </p>
-<p> <a href="/gym/members/<%= member.id() %>"> View details</a></p>
+<p> <a href="/gym/members/<%= member.id() %>"> <%= member.pretty_name() %></a> </p>
 <hr>
 <% end %>

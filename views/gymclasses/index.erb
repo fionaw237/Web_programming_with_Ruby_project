@@ -7,8 +7,7 @@
 <% counter = 1 %>
 
 <% @gymclasses.each do |gymclass| %>
-<p><%= counter %>) <%= gymclass.name() %> </p>
-<p> <a href="/gym/classes/<%= gymclass.id() %>"> View details</a></p>
+<p><%= counter %>) <a href="/gym/classes/<%= gymclass.id() %>"> <%= gymclass.name() %></a> </p>
 <hr>
 <% counter += 1 %>
 <% end %>

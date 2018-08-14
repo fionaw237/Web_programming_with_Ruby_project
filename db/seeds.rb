@@ -19,7 +19,7 @@ member1 = Member.new(
     'phone_number' => '07123456789',
     'address' => '742 Evergreen Terrace, Springfield',
     'dob' => '15/05/1986',
-    'image' => "/images/bart_simpson.jpg"
+    'image' => "/images/bart_simpson.jpeg"
   }
 )
 
@@ -31,7 +31,7 @@ member2 = Member.new(
     'phone_number' => '07654876524',
     'address' => '742 Evergreen Terrace, Springfield',
     'dob' => '05/08/1989',
-    'image' => "/images/lisa_simpson.jpg"
+    'image' => "/images/lisa_simpson.jpeg"
   }
 )
 
@@ -55,7 +55,7 @@ member4 = Member.new(
     'phone_number' => '07109876253',
     'address' => '740 Evergreen Terrace, Springfield',
     'dob' => '30/01/1966',
-    'image' => "/images/ned_flanders.png"
+    'image' => "/images/ned_flanders.jpeg"
   }
 )
 
@@ -70,7 +70,7 @@ spin = GymClass.new(
     'name' => 'Spin',
     'capacity' => 15,
     'description' => 'bikes!',
-    'image' => "/images/Spin-Class.jpg"
+    'image' => "/images/spin.jpg"
   }
 )
 
@@ -79,7 +79,7 @@ insanity = GymClass.new(
     'name' => 'Insanity',
     'capacity' => 22,
     'description' => 'Insane!',
-    'image' => '/images/Insanity.jpg'
+    'image' => '/images/insanity.jpg'
   }
 )
 
@@ -124,7 +124,7 @@ p90x = GymClass.new(
     'name' => 'P90X',
     'capacity' => 24,
     'description' => 'P90X!',
-    'image' => '/images/p90x.png'
+    'image' => '/images/p90x.jpeg'
   }
 )
 
@@ -133,7 +133,7 @@ pilates = GymClass.new(
     'name' => 'Pilates',
     'capacity' => 18,
     'description' => 'pilates!',
-    'image' => '/images/pilates.jpeg'
+    'image' => '/images/pilates2.jpeg'
   }
 )
 
@@ -142,7 +142,7 @@ zumba = GymClass.new(
     'name' => 'Zumba',
     'capacity' => 18,
     'description' => 'dance!',
-    'image' => '/images/Zumba.png'
+    'image' => '/images/zumba.jpg'
   }
 )
 
