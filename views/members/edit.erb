@@ -1,54 +1,85 @@
 <form action="/gym/members/<%= @member.id() %>" method="post">
-  <label for="first-name"> First name: </label>
-<input id= "first-name" type="text" name="first_name" value="<%= @member.first_name%>" required>
-<br>
-<br>
-<label for="last-name"> Last name: </label>
-<input id= "last-name" type="text" name="last_name" value="<%= @member.last_name%>" required>
-<br>
-<br>
 
 
+  <div class="grid">
 
-<label for="membership-select"> Membership type: </label>
-<select id="membership-select" name="member_type" required>
-  <% if @member.member_type() == "standard"%>
-    <option value="standard" selected>standard</option>
-    <option value="premium">premium</option>
-  <% else %>
-  <option value="standard">standard</option>
-  <option value="premium" selected>premium</option>
-  <% end %>
-</select>
+    <div class="grid-row">
+      <div class="cell-left">
+        <label for="first-name"> First Name: </label>
+      </div>
+      <div class="cell-right">
+        <input id= "first-name" type="text" name="first_name" value="<%= @member.first_name%>" required>
+      </div>
+    </div>
 
-<br/>
-<br/>
+    <div class="grid-row">
+      <div class="cell-left">
+        <label for="last-name"> Last name: </label>
+      </div>
+      <div class="cell-right">
+        <input id= "last-name" type="text" name="last_name" value="<%= @member.last_name%>" required>
+      </div>
+    </div>
 
-<label for="phone-number"> Phone number: </label>
-<input id= "phone-number" type="text" name="phone_number" value="<%= @member.phone_number%>" required>
+    <div class="grid-row">
+      <div class="cell-left">
+        <label for="membership-select"> Membership type: </label>
+      </div>
+      <div class="cell-right">
+        <select id="membership-select" name="member_type" required>
+          <% if @member.member_type() == "standard"%>
+          <option value="standard" selected>standard</option>
+          <option value="premium">premium</option>
+          <% else %>
+          <option value="standard">standard</option>
+          <option value="premium" selected>premium</option>
+          <% end %>
+        </select>
+      </div>
+    </div>
 
-<br/>
-<br/>
+    <div class="grid-row">
+      <div class="cell-left">
+        <label for="phone-number"> Phone number: </label>
+      </div>
+      <div class="cell-right">
+        <input id= "phone-number" type="text" name="phone_number" value="<%= @member.phone_number%>" required>
+      </div>
+    </div>
 
-<label for="address"> Address: </label>
-<input id= "address" type="text" name="address" value="<%= @member.address%>" required>
+    <div class="grid-row">
+      <div class="cell-left">
+        <label for="address"> Address: </label>
+      </div>
+      <div class="cell-right">
+        <input id= "address" type="text" name="address" value="<%= @member.address%>" required>
+      </div>
+    </div>
 
-<br/>
-<br/>
+    <div class="grid-row">
+      <div class="cell-left">
+        <label for="dob"> Date of birth: </label>
+      </div>
+      <div class="cell-right">
+        <input id= "dob" type="text" name="dob" value="<%= @member.dob%>" required>
+      </div>
+    </div>
 
-<label for="dob"> Date of birth: </label>
-<input id= "dob" type="text" name="dob" value="<%= @member.dob%>" required>
+    <div class="grid-row">
+      <div class="cell-left">
+        <label for="image"> Image URL: </label>
+      </div>
+      <div class="cell-right">
+        <input id= "image" type="text" name="image" value="<%= @member.image()%>" required>
+      </div>
+    </div>
 
-<br/>
-<br/>
+    <div class="grid-row">
+      <div class="cell-left">
+        <input type="submit" value="Confirm changes">
+      </div>
+    </div>
 
-<label for="image"> Image URL: </label>
-<input id= "image" type="text" name="image" value="<%= @member.image()%>" required>
-
-<br>
-<br>
-
-<input type="submit" value="Confirm changes">
-
+  </div>
 
 </form>
