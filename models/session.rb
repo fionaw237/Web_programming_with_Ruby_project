@@ -74,6 +74,10 @@ class Session
     return "#{@start_hour}:#{@start_minute} - #{@end_hour}:#{@end_minute}"
   end
 
+  def pretty_date()
+    return "#{@day}/#{@month}/#{@year}"
+  end
+
   def self.find(id)
     sql = 'SELECT * FROM sessions WHERE id = $1'
     values = [id]
