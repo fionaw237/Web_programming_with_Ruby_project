@@ -95,16 +95,16 @@ spin = GymClass.new(
   {
     'name' => 'Spin',
     'capacity' => 15,
-    'description' => 'bikes!',
+    'description' => 'An indoor cycling workout where you control the intensity. It’s fun, low impact and you will burn lots of calories!',
     'image' => "/images/spin.jpg"
   }
 )
 
-insanity = GymClass.new(
+insane = GymClass.new(
   {
-    'name' => 'Insanity',
+    'name' => 'Insane Fitness',
     'capacity' => 22,
-    'description' => 'Insane!',
+    'description' => 'Cardio-based total body conditioning program based on the principles of high intensity interval training. Insanity pushes the participant to new training heights, resulting in more calories burned, faster results, and a more efficient metabolism.',
     'image' => '/images/insanity.jpg'
   }
 )
@@ -113,16 +113,16 @@ yoga = GymClass.new(
   {
     'name' => 'Yoga',
     'capacity' => 18,
-    'description' => 'Relax!',
+    'description' => 'In this class, postures are practiced to align, strengthen and promote flexibility in the body. Breathing techniques and meditation are also integrated. You can expect an emphasis on simplicity, repetition, and ease of movement.',
     'image' => '/images/yoga.jpeg'
   }
 )
 
-bodypump = GymClass.new(
+total_body = GymClass.new(
   {
-    'name' => 'Bodypump',
+    'name' => 'Total Body Tone',
     'capacity' => 22,
-    'description' => 'bodypump!',
+    'description' => 'Shapes, tones and strengthens your entire body!',
     'image' => '/images/bodypump.jpg'
   }
 )
@@ -131,7 +131,7 @@ boxercise = GymClass.new(
   {
     'name' => 'Boxercise',
     'capacity' => 22,
-    'description' => 'boxing!',
+    'description' => 'Boxercise is an exercise class based on the training concepts boxers use to keep fit. Classes can take a variety of formats but a typical one may involve shadow-boxing, skipping, hitting pads, kicking punchbags, press-ups, shuttle-runs and sit-ups',
     'image' => '/images/boxercise.jpg'
   }
 )
@@ -140,17 +140,8 @@ circuits = GymClass.new(
   {
     'name' => 'Circuits',
     'capacity' => 24,
-    'description' => 'circuits!',
+    'description' => 'In a Circuits class, the studio is set up with various exercise stations, you will move around each station and workout different muscle groups. You will work hard and test both your cardio and strength for an all-round challenge.',
     'image' => '/images/circuits.jpg'
-  }
-)
-
-p90x = GymClass.new(
-  {
-    'name' => 'P90X',
-    'capacity' => 24,
-    'description' => 'P90X!',
-    'image' => '/images/p90x.jpeg'
   }
 )
 
@@ -158,29 +149,28 @@ pilates = GymClass.new(
   {
     'name' => 'Pilates',
     'capacity' => 18,
-    'description' => 'pilates!',
+    'description' => 'If practiced with consistency, Pilates improves flexibility, builds strength and develops control and endurance in the entire body. It puts emphasis on alignment, breathing, developing a strong core, and improving coordination and balance.',
     'image' => '/images/pilates2.jpeg'
   }
 )
 
-zumba = GymClass.new(
+dance = GymClass.new(
   {
-    'name' => 'Zumba',
+    'name' => 'Dance Fit',
     'capacity' => 18,
-    'description' => 'dance!',
+    'description' => 'Zumba is a fitness program that combines Latin and international music with dance moves. Zumba routines incorporate interval training — alternating fast and slow rhythms — and resistance training',
     'image' => '/images/zumba.jpg'
   }
 )
 
 spin.save()
-insanity.save()
+insane.save()
 yoga.save()
-bodypump.save()
+total_body.save()
 boxercise.save()
 circuits.save()
-p90x.save()
 pilates.save()
-zumba.save()
+dance.save()
 
 studio1 = Studio.new(
   {
@@ -222,7 +212,7 @@ session2 = Session.new(
 
 session3 = Session.new(
   {
-    'gymclass_id' => insanity.id(),
+    'gymclass_id' => insane.id(),
     'studio_id' => studio1.id(),
     'year' => '2018',
     'month' => '08',
@@ -231,13 +221,13 @@ session3 = Session.new(
     'start_minute' => '00',
     'end_hour' => '10',
     'end_minute' => '00',
-    'spaces' => insanity.capacity()
+    'spaces' => insane.capacity()
   }
 )
 
 session4 = Session.new(
   {
-    'gymclass_id' => insanity.id(),
+    'gymclass_id' => insane.id(),
     'studio_id' => studio1.id(),
     'year' => '2018',
     'month' => '08',
@@ -246,7 +236,7 @@ session4 = Session.new(
     'start_minute' => '00',
     'end_hour' => '15',
     'end_minute' => '45',
-    'spaces' => insanity.capacity()
+    'spaces' => insane.capacity()
   }
 )
 

@@ -5,7 +5,7 @@
       <h1><%= @gymclass.name() %></h1>
 
       <p>Capacity: <%= @gymclass.capacity %></p>
-      <p> Description: <%= @gymclass.description() %> </p>
+      <p><%= @gymclass.description() %> </p>
 
       <form action="/gym/classes/<%= @gymclass.id %>/delete" method="post">
         <input type="submit" value="Delete class">
