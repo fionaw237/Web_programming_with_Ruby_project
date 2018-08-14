@@ -1,29 +1,49 @@
 <form action="/gym/classes" method="post">
 
-  <label for="name"> Class name: </label>
-  <input id="name" type="text" name="name" required>
+  <div class="grid">
 
-  <br/>
-  <br/>
+    <div class="grid">
 
-  <label for="capacity"> Capacity: </label>
-  <input id="capacity" type="text" name="capacity" required>
+      <div class="grid-row">
+        <div class="cell-left">
+          <label for="name"> Class name: </label>
+        </div>
+        <div class="cell-right">
+          <input id="name" type="text" name="name" required>
+        </div>
+      </div>
 
-  <br/>
-  <br/>
+      <div class="grid-row">
+        <div class="cell-left">
+          <label for="capacity"> Capacity: </label>
+        </div>
+        <div class="cell-right">
+          <input id="capacity" type="text" name="capacity" required>
+        </div>
+      </div>
 
-  <label for="description"> Description: </label>
-  <input id="description" type="text" name="description" required>
+      <div class="grid-row">
+        <div class="cell-left">
+          <label for="description"> Description: </label>
+        </div>
+        <div class="cell-right">
+          <input id="description" type="text" name="description" required>
+        </div>
+      </div>
 
-  <br/>
-  <br/>
+      <div class="grid-row">
+        <div class="cell-left">
+          <label for="image"> Image: </label>
+        </div>
+        <div class="cell-right">
+          <input id ="image" type="file" name="image" accept="image/*" required>
+        </div>
+      </div>
 
-  <label for="image"> Image: </label>
-  <input id ="image" type="file" name="image" accept="image/*" required>
+      <div class="grid-row">
+        <div class="cell">
+          <input type="submit" value="Add new class">
+        </div>
+      </div>
 
-  <br/>
-  <br/>
-
-  <input type="submit" value="Add new class">
-
-</form>
+  </div>

@@ -1,29 +1,49 @@
 <form action="/gym/classes/<%= @gymclass.id() %>" method="post">
 
-  <label for="name"> Class name: </label>
-  <input id= "name" type="text" name="name" value="<%= @gymclass.name()%>" required>
+  <div class="grid">
 
-  <br>
-  <br>
+    <div class="grid-row">
+      <div class="cell-left">
+        <label for="name"> Class name: </label>
+      </div>
+      <div class="cell-right">
+        <input id= "name" type="text" name="name" value="<%= @gymclass.name()%>" required>
+      </div>
+    </div>
 
-  <label for="capacity"> Capacity: </label>
-  <input id= "capacity" type="text" name="capacity" value="<%= @gymclass.capacity()%>" required>
+    <div class="grid-row">
+      <div class="cell-left">
+        <label for="capacity"> Capacity: </label>
+      </div>
+      <div class="cell-right">
+        <input id= "capacity" type="text" name="capacity" value="<%= @gymclass.capacity()%>" required>
+      </div>
+    </div>
 
-  <br>
-  <br>
+    <div class="grid-row">
+      <div class="cell-left">
+        <label for="description"> Description: </label>
+      </div>
+      <div class="cell-right">
+        <input id= "description" type="text" name="description" value="<%= @gymclass.description()%>" required>
+      </div>
+    </div>
 
-  <label for="description"> Description: </label>
-  <input id= "description" type="text" name="description" value="<%= @gymclass.description()%>" required>
+    <div class="grid-row">
+      <div class="cell-left">
+        <label for="image"> Image URL: </label>
+      </div>
+      <div class="cell-right">
+        <input id= "image" type="text" name="image" value="<%= @gymclass.image()%>" required>
+      </div>
+    </div>
 
-  <br>
-  <br>
+    <div class="grid-row">
+      <div class="cell">
+        <input type="submit" value="Confirm changes">
+      </div>
+    </div>
 
-  <label for="image"> Image URL: </label>
-  <input id= "image" type="text" name="image" value="<%= @gymclass.image()%>" required>
-
-  <br>
-  <br>
-
-  <input type="submit" value="Confirm changes">
+  </div>
 
 </form>
