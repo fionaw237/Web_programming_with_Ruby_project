@@ -17,6 +17,9 @@ post '/gym' do
   spaces = GymClass.find(params[:gymclass_id]).capacity()
   @session = Session.new(params)
   @session.spaces = spaces
+  @session.year = params[:date][0..3]
+  @session.month = params[:date][5..6]
+  @session.day = params[:date][8..9]
   @session.save()
   redirect "/gym"
 end

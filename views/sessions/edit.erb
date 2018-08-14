@@ -17,7 +17,7 @@
   <br><br>
 
   <label for="date-select">Date:</label>
-  <input id="date-select" type="date" name ="date" value="<%= @session.year() %>-<%= @session.month() %>-<%= @session.day() %>">
+  <input id="date-select" type="date" name ="date" value="<%= @session.year() %>-<%= @session.month() %>-<%= @session.day() %>" required>
 
   <br><br>
 
@@ -25,9 +25,10 @@
   <select id="start-hour" name="start_hour" value ="<%= @session.start_hour() %>" required>
     <option value="<%= @session.start_hour() %>" selected> <%= @session.start_hour() %> </option>
 
-    <% hours = [*1..24] %>
+    <% hours = [*6..21] %>
     <% hours.each do |hour|  %>
-      <% unless hour == @session.start_hour().to_i() %>
+      <% hour = ("0"+hour.to_s()) if hour.to_s().length() == 1%>
+      <% unless hour == @session.start_hour() %>
         <option value= <%="#{hour}"%> ><%= hour  %> </option>
       <% end %>
     <% end %>
@@ -37,7 +38,8 @@
 
     <% minutes = (0..60).step(5).to_a() %>
     <% minutes.each do |minute|  %>
-      <% unless minute == @session.start_minute().to_i() %>
+      <% minute = ("0"+minute.to_s()) if minute.to_s().length() == 1%>
+      <% unless minute == @session.start_minute() %>
         <option value= <%="#{minute}"%> ><%= minute  %> </option>
       <% end %>
     <% end %>
@@ -51,7 +53,8 @@
 
     <% hours = [*1..24] %>
     <% hours.each do |hour|  %>
-      <% unless hour == @session.end_hour().to_i() %>
+      <% hour = ("0"+hour.to_s()) if hour.to_s().length() == 1%>
+      <% unless hour == @session.end_hour() %>
         <option value= <%="#{hour}"%> ><%= hour  %> </option>
       <% end %>
     <% end %>
@@ -61,7 +64,8 @@
 
     <% minutes = (0..60).step(5).to_a() %>
     <% minutes.each do |minute|  %>
-      <% unless minute == @session.end_minute().to_i() %>
+      <% minute = ("0"+minute.to_s()) if minute.to_s().length() == 1%>
+      <% unless minute == @session.end_minute() %>
         <option value= <%="#{minute}"%> ><%= minute  %> </option>
       <% end %>
     <% end %>
