@@ -13,43 +13,56 @@ Studio.delete_all()
 
 member1 = Member.new(
   {
-    'first_name' => 'Fiona',
-    'last_name' => 'Wilson',
+    'first_name' => 'Bart',
+    'last_name' => 'Simpson',
     'member_type' => 'premium',
     'phone_number' => '07123456789',
-    'address' => '25 Some Street, Dundee, DD2 2FF',
+    'address' => '742 Evergreen Terrace, Springfield',
     'dob' => '15/05/1986',
-    'image' => "/images/Spin-Class.jpg"
+    'image' => "/images/bart_simpson.jpg"
   }
 )
 
 member2 = Member.new(
   {
-    'first_name' => 'Joanna',
-    'last_name' => 'Wilson',
+    'first_name' => 'Lisa',
+    'last_name' => 'Simpson',
     'member_type' => 'standard',
     'phone_number' => '07654876524',
-    'address' => '32 Another Street, Glasgow, G14 6YH',
+    'address' => '742 Evergreen Terrace, Springfield',
     'dob' => '05/08/1989',
-    'image' => "/images/Spin-Class.jpg"
+    'image' => "/images/lisa_simpson.jpg"
   }
 )
 
 member3 = Member.new(
   {
-    'first_name' => 'Louise',
-    'last_name' => 'Kirkcaldy',
+    'first_name' => 'Marge',
+    'last_name' => 'Simpson',
     'member_type' => 'premium',
     'phone_number' => '07109876253',
-    'address' => '41 Some Place, Dundee, DD5 2BN',
-    'dob' => '29/07/1983',
-    'image' => "/images/Spin-Class.jpg"
+    'address' => '742 Evergreen Terrace, Springfield',
+    'dob' => '29/07/1965',
+    'image' => "/images/marge_simpson.jpg"
+  }
+)
+
+member4 = Member.new(
+  {
+    'first_name' => 'Ned',
+    'last_name' => 'Flanders',
+    'member_type' => 'standard',
+    'phone_number' => '07109876253',
+    'address' => '740 Evergreen Terrace, Springfield',
+    'dob' => '30/01/1966',
+    'image' => "/images/ned_flanders.png"
   }
 )
 
 member1.save()
 member2.save()
 member3.save()
+member4.save()
 
 
 spin = GymClass.new(
