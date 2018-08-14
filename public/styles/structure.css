@@ -19,10 +19,38 @@ html {
   /*background-color: darkcyan;*/
 }
 
-figure {
+.grid {
   border: 2px solid #bbb;
   border-radius: 25px;
 }
+
+.grid-row {
+  display: flex;
+}
+
+.cell {
+  flex: 1;
+  padding: 10px 15px 10px 15px;
+  text-align: center;
+  align-items: center;
+}
+
+.cell-left {
+  flex: 1;
+  padding: 10px 15px 10px 15px;
+  text-align: right;
+}
+
+.cell-right {
+  flex: 1;
+  padding: 10px 15px 10px 15px;
+  text-align: left;
+}
+
+/*figure {
+  border: 2px solid #bbb;
+  border-radius: 25px;
+}*/
 
 /*#content {
   background: black url('/images/sanfran.jpg');
@@ -37,7 +65,7 @@ a:link {
 }
 
 a:visited {
-    color: pink;
+    color: steelblue;
     background-color: transparent;
     text-decoration: none;
 }
@@ -48,11 +76,11 @@ a:hover {
     text-decoration: underline;
 }
 
-a:active {
+/*a:active {
     color: yellow;
     background-color: transparent;
     text-decoration: underline;
-}
+}*/
 
 section {
   margin: 40px;

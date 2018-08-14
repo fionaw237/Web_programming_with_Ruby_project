@@ -13,49 +13,73 @@ Studio.delete_all()
 
 member1 = Member.new(
   {
-    'first_name' => 'Bart',
-    'last_name' => 'Simpson',
+    'first_name' => 'James',
+    'last_name' => 'Watson',
     'member_type' => 'premium',
     'phone_number' => '07123456789',
-    'address' => '742 Evergreen Terrace, Springfield',
-    'dob' => '15/05/1986',
-    'image' => "/images/bart_simpson.jpeg"
+    'address' => '25 A Street, Glasgow, G1 2DR',
+    'dob' => '15/05/1963',
+    'image' => "/images/person1.jpeg"
   }
 )
 
 member2 = Member.new(
   {
     'first_name' => 'Lisa',
-    'last_name' => 'Simpson',
+    'last_name' => 'Andrews',
     'member_type' => 'standard',
     'phone_number' => '07654876524',
-    'address' => '742 Evergreen Terrace, Springfield',
-    'dob' => '05/08/1989',
-    'image' => "/images/lisa_simpson.jpeg"
+    'address' => '76 Some Place, Glasgow, G12 4RT',
+    'dob' => '05/11/1989',
+    'image' => "/images/person5.jpeg"
   }
 )
 
 member3 = Member.new(
   {
-    'first_name' => 'Marge',
+    'first_name' => 'Rachel',
     'last_name' => 'Simpson',
     'member_type' => 'premium',
-    'phone_number' => '07109876253',
-    'address' => '742 Evergreen Terrace, Springfield',
-    'dob' => '29/07/1965',
-    'image' => "/images/marge_simpson.jpg"
+    'phone_number' => '07129891253',
+    'address' => '45 Another Road, Glasgow, G9 6TY',
+    'dob' => '29/07/1988',
+    'image' => "/images/person6.jpeg"
   }
 )
 
 member4 = Member.new(
   {
-    'first_name' => 'Ned',
-    'last_name' => 'Flanders',
+    'first_name' => 'Michael',
+    'last_name' => 'Edwards',
     'member_type' => 'standard',
-    'phone_number' => '07109876253',
-    'address' => '740 Evergreen Terrace, Springfield',
-    'dob' => '30/01/1966',
-    'image' => "/images/ned_flanders.jpeg"
+    'phone_number' => '07109876354',
+    'address' => '742 Long Street, Glasgow, G7 8NE',
+    'dob' => '30/01/1991',
+    'image' => "/images/person2.jpeg"
+  }
+)
+
+member5 = Member.new(
+  {
+    'first_name' => 'Richard',
+    'last_name' => 'Brown',
+    'member_type' => 'premium',
+    'phone_number' => '07103876657',
+    'address' => '12 Some Street, Glasgow, G4 6KY',
+    'dob' => '31/01/1988',
+    'image' => "/images/person3.jpeg"
+  }
+)
+
+member6 = Member.new(
+  {
+    'first_name' => 'Laura',
+    'last_name' => 'Coyle',
+    'member_type' => 'standard',
+    'phone_number' => '07160576259',
+    'address' => '742 Long Street, Glasgow, G7 8NE',
+    'dob' => '30/10/1993',
+    'image' => "/images/person7.jpeg"
   }
 )
 
@@ -63,6 +87,8 @@ member1.save()
 member2.save()
 member3.save()
 member4.save()
+member5.save()
+member6.save()
 
 
 spin = GymClass.new(
