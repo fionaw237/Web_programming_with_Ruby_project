@@ -11,7 +11,8 @@ CREATE TABLE members (
   member_type VARCHAR(255),
   phone_number VARCHAR(255),
   address VARCHAR(255),
-  dob VARCHAR(255)
+  dob VARCHAR(255),
+  image VARCHAR(255)
 );
 
 CREATE table gym_classes (

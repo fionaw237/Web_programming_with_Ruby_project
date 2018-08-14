@@ -4,30 +4,34 @@
 <form action="/gym/members" method="post">
 
   <label for="first-name"> First Name: </label>
-  <input id="first-name" type="text" name="first_name">
+  <input id="first-name" type="text" name="first_name" required>
   <br/>
   <br/>
   <label for="last-name"> Last Name: </label>
-  <input id="last-name" type="text" name="last_name">
+  <input id="last-name" type="text" name="last_name" required>
   <br/>
   <br/>
   <label for="membership-select"> Membership type: </label>
-  <select id="membership-select" name="member_type">
+  <select id="membership-select" name="member_type" required>
     <option value="standard">standard</option>
     <option value="premium">premium</option>
   </select>
   <br/>
   <br/>
   <label for="phone-number"> Phone number: </label>
-  <input id="phone-number" type="text" name="phone_number">
+  <input id="phone-number" type="text" name="phone_number" required>
   <br/>
   <br/>
   <label for="address"> Address: </label>
-  <input id="address" type="text" name="address">
+  <input id="address" type="text" name="address" required>
   <br/>
   <br/>
   <label for="dob"> Date of birth: </label>
-  <input id="dob" type="text" name="dob">
+  <input id="dob" type="text" name="dob" required>
+  <br/>
+  <br/>
+  <label for="image"> Profile picture: </label>
+  <input id ="image" type="file" name="image" accept="image/*" required>
   <br/>
   <br/>
   <input type="submit" value="Add member">

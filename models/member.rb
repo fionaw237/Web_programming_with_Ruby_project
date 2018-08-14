@@ -4,7 +4,7 @@ require_relative('booking.rb')
 class Member
 
   attr_reader :id
-  attr_accessor :first_name, :last_name, :member_type, :phone_number, :address, :dob
+  attr_accessor :first_name, :last_name, :member_type, :phone_number, :address, :dob, :image
 
   def initialize(options)
     @id = options['id'].to_i() if options['id']
@@ -14,6 +14,7 @@ class Member
     @phone_number = options['phone_number']
     @address = options['address']
     @dob = options['dob']
+    @image = options['image']
   end
 
   def pretty_name()
@@ -21,15 +22,15 @@ class Member
   end
 
   def save()
-    sql = 'INSERT INTO members (first_name, last_name, member_type, phone_number, address, dob) VALUES ($1, $2, $3, $4 , $5, $6) RETURNING id'
-    values = [@first_name, @last_name, @member_type, @phone_number, @address, @dob]
+    sql = 'INSERT INTO members (first_name, last_name, member_type, phone_number, address, dob, image) VALUES ($1, $2, $3, $4 , $5, $6, $7) RETURNING id'
+    values = [@first_name, @last_name, @member_type, @phone_number, @address, @dob, @image]
     result = SqlRunner.run(sql, values).first()
     @id = result['id'].to_i()
   end
 
   def update()
-    sql = 'UPDATE members SET (first_name, last_name, member_type, phone_number, address, dob) = ($1, $2, $3, $4 , $5, $6) WHERE id = $7'
-    values = [@first_name, @last_name, @member_type, @phone_number, @address, @dob, @id]
+    sql = 'UPDATE members SET (first_name, last_name, member_type, phone_number, address, dob, image) = ($1, $2, $3, $4 , $5, $6, $7) WHERE id = $8'
+    values = [@first_name, @last_name, @member_type, @phone_number, @address, @dob, @image, @id]
     SqlRunner.run(sql, values)
   end
 

@@ -18,7 +18,8 @@ member1 = Member.new(
     'member_type' => 'premium',
     'phone_number' => '07123456789',
     'address' => '25 Some Street, Dundee, DD2 2FF',
-    'dob' => '15/05/1986'
+    'dob' => '15/05/1986',
+    'image' => "/images/Spin-Class.jpg"
   }
 )
 
@@ -29,7 +30,8 @@ member2 = Member.new(
     'member_type' => 'standard',
     'phone_number' => '07654876524',
     'address' => '32 Another Street, Glasgow, G14 6YH',
-    'dob' => '05/08/1989'
+    'dob' => '05/08/1989',
+    'image' => "/images/Spin-Class.jpg"
   }
 )
 
@@ -40,7 +42,8 @@ member3 = Member.new(
     'member_type' => 'premium',
     'phone_number' => '07109876253',
     'address' => '41 Some Place, Dundee, DD5 2BN',
-    'dob' => '29/07/1983'
+    'dob' => '29/07/1983',
+    'image' => "/images/Spin-Class.jpg"
   }
 )
 

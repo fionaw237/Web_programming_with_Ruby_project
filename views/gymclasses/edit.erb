@@ -1,25 +1,25 @@
 <form action="/gym/classes/<%= @gymclass.id() %>" method="post">
 
   <label for="name"> Class name: </label>
-  <input id= "name" type="text" name="name" value="<%= @gymclass.name()%>">
+  <input id= "name" type="text" name="name" value="<%= @gymclass.name()%>" required>
 
   <br>
   <br>
 
   <label for="capacity"> Capacity: </label>
-  <input id= "capacity" type="text" name="capacity" value="<%= @gymclass.capacity()%>">
+  <input id= "capacity" type="text" name="capacity" value="<%= @gymclass.capacity()%>" required>
 
   <br>
   <br>
 
   <label for="description"> Description: </label>
-  <input id= "description" type="text" name="description" value="<%= @gymclass.description()%>">
+  <input id= "description" type="text" name="description" value="<%= @gymclass.description()%>" required>
 
   <br>
   <br>
 
   <label for="image"> Image URL: </label>
-  <input id= "image" type="text" name="image" value="<%= @gymclass.image()%>">
+  <input id= "image" type="text" name="image" value="<%= @gymclass.image()%>" required>
 
   <br>
   <br>

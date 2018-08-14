@@ -17,7 +17,7 @@
   <br><br>
 
   <label for="day-select"> Day: </label>
-  <select id="day-select" name="day" value ="<%= @session.day() %>">
+  <select id="day-select" name="day" value ="<%= @session.day() %>" required>
     <option value="<%= @session.day() %>" selected> <%= @session.day() %> </option>
 
     <% days = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"] %>
@@ -31,12 +31,12 @@
   <br><br>
 
   <label for="start-time"> Start time: </label>
-  <input id ="start-time" type="text" name="start_time" value="<%= @session.start_time() %>">
+  <input id ="start-time" type="text" name="start_time" value="<%= @session.start_time() %>" required>
 
   <br><br>
 
   <label for="end-time"> End time: </label>
-  <input id ="end-time" type="text" name="end_time" value="<%= @session.end_time() %>">
+  <input id ="end-time" type="text" name="end_time" value="<%= @session.end_time() %>" required>
   <br><br>
 
   <input type="submit" value="Confirm changes">

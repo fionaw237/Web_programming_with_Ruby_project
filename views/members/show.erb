@@ -5,6 +5,8 @@
 <p> Date of birth: <%= @member.dob()
 %></p>
 
+<img src= "<%=@member.image()%>" alt = "<%=@member.pretty_name()%>" width='300' height='300' >
+
 <form action="/gym/members/<%= @member.id %>/delete" method="post">
   <input type="submit" value="Delete member">
 </form>

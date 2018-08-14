@@ -18,6 +18,7 @@ end
 #create
 post '/gym/members' do
   @member = Member.new(params)
+  @member.image = "/images/" + params[:image]
   @member.save()
   redirect "/gym/members"
 end

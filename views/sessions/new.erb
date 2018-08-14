@@ -4,7 +4,7 @@
 <form action="/gym" method="post">
 
   <label for="gymclass-select">Class type: </label>
-  <select id="gymclass-select" name="gymclass_id">
+  <select id="gymclass-select" name="gymclass_id" required>
     <% @classes.each do |gymclass|  %>
     <option value= <%="#{gymclass.id}"%>><%= gymclass.name() %> </option>
     <% end %>
@@ -13,7 +13,7 @@
   <br><br>
 
   <label for="studio-select">Studio: </label>
-  <select id="studio-select" name="studio_id">
+  <select id="studio-select" name="studio_id" required>
     <% @studios.each do |studio|  %>
     <option value= <%="#{studio.id}"%>><%= studio.name() %> </option>
     <% end %>
@@ -22,7 +22,7 @@
   <br><br>
 
   <label for="day"> Day: </label>
-  <select id="day-select" name="day">
+  <select id="day-select" name="day" required>
     <% days = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"] %>
     <% days.each do |new_day|  %>
     <option value= <%="#{new_day}"%>><%= new_day  %> </option>
@@ -32,12 +32,12 @@
   <br><br>
 
   <label for="start-time"> Start time: </label>
-  <input id ="start-time" type="text" name="start_time">
+  <input id ="start-time" type="text" name="start_time" required>
 
   <br><br>
 
   <label for="end-time"> End time: </label>
-  <input id ="end-time" type="text" name="end_time">
+  <input id ="end-time" type="text" name="end_time" required>
   <br><br>
 
   <!-- <label for="spaces">Spaces: </label>
