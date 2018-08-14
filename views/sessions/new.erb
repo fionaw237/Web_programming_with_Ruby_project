@@ -3,71 +3,92 @@
 
 <form action="/gym" method="post">
 
-  <label for="gymclass-select">Class type: </label>
-  <select id="gymclass-select" name="gymclass_id" required>
-    <% @classes.each do |gymclass|  %>
-    <option value= <%="#{gymclass.id}"%>><%= gymclass.name() %> </option>
-    <% end %>
-  </select>
+<div class="grid">
 
-  <br><br>
+  <div class="grid-row">
+    <div class="cell-left">
+      <label for="gymclass-select">Class type: </label>
+    </div>
+    <div class="cell-right">
+      <select id="gymclass-select" name="gymclass_id" required>
+        <% @classes.each do |gymclass|  %>
+        <option value= <%="#{gymclass.id}"%>><%= gymclass.name() %> </option>
+        <% end %>
+      </select>    </div>
+  </div>
 
-  <label for="studio-select">Studio: </label>
-  <select id="studio-select" name="studio_id" required>
-    <% @studios.each do |studio|  %>
-    <option value= <%="#{studio.id}"%>><%= studio.name() %> </option>
-    <% end %>
-  </select>
+  <div class="grid-row">
+    <div class="cell-left">
+      <label for="studio-select">Studio: </label>
+    </div>
+    <div class="cell-right">
+      <select id="studio-select" name="studio_id" required>
+        <% @studios.each do |studio|  %>
+        <option value= <%="#{studio.id}"%>><%= studio.name() %> </option>
+        <% end %>
+      </select>    </div>
+  </div>
 
-  <br><br>
+  <div class="grid-row">
+    <div class="cell-left">
+      <label for="date-select">Date:</label>
+    </div>
+    <div class="cell-right">
+      <input id="date-select" type="date" name ="date" required>
+    </div>
+  </div>
 
-  <label for="date-select">Date:</label>
-  <input id="date-select" type="date" name ="date" required>
+  <div class="grid-row">
+    <div class="cell-left">
+      <label for="start-time"> Start time: </label>
+    </div>
+    <div class="cell-right">
+      <select id="start-hour" name="start_hour" required>
+        <% hours = [*6..21] %>
+        <% hours.each do |hour|  %>
+        <% hour = ("0"+hour.to_s()) if hour.to_s().length() == 1%>
+        <option value= <%="#{hour}"%> ><%= hour  %> </option>
+        <% end %>
+      </select>
 
-  <br><br>
-
-  <label for="start-time"> Start time: </label>
-  <select id="start-hour" name="start_hour" required>
-    <% hours = [*6..21] %>
-    <% hours.each do |hour|  %>
-      <% hour = ("0"+hour.to_s()) if hour.to_s().length() == 1%>
-      <option value= <%="#{hour}"%> ><%= hour  %> </option>
-      <% end %>
-    </select>
-
-    <select id="start-minute" name="start_minute" required>
-      <% minutes = (0..60).step(5).to_a() %>
-      <% minutes.each do |minute|  %>
+      <select id="start-minute" name="start_minute" required>
+        <% minutes = (0..60).step(5).to_a() %>
+        <% minutes.each do |minute|  %>
         <% minute = ("0"+minute.to_s()) if minute.to_s().length() == 1%>
         <option value= <%="#{minute}"%> ><%= minute  %> </option>
-      <% end %>
-    </select>
+        <% end %>
+      </select>
+    </div>
+  </div>
 
-  <br><br>
+  <div class="grid-row">
+    <div class="cell-left">
+      <label for="end-time"> End time: </label>
+    </div>
+    <div class="cell-right">
+      <select id="end-hour" name="end_hour" required>
+        <% hours = [*6..21] %>
+        <% hours.each do |hour|  %>
+          <% hour = ("0"+hour.to_s()) if hour.to_s().length() == 1%>
+          <option value= <%="#{hour}"%> ><%= hour  %> </option>
+        <% end %>
+      </select>
 
-  <label for="end-time"> End time: </label>
-  <select id="end-hour" name="end_hour" required>
-    <% hours = [*6..21] %>
-    <% hours.each do |hour|  %>
-      <% hour = ("0"+hour.to_s()) if hour.to_s().length() == 1%>
-      <option value= <%="#{hour}"%> ><%= hour  %> </option>
-    <% end %>
-  </select>
+      <select id="end-minute" name="end_minute" required>
+        <% minutes = (0..60).step(5).to_a() %>
+        <% minutes.each do |minute|  %>
+          <% minute = ("0"+minute.to_s()) if minute.to_s().length() == 1%>
+          <option value= <%="#{minute}"%> ><%= minute  %> </option>
+        <% end %>
+      </select>    </div>
+  </div>
 
-  <select id="end-minute" name="end_minute" required>
-    <% minutes = (0..60).step(5).to_a() %>
-    <% minutes.each do |minute|  %>
-      <% minute = ("0"+minute.to_s()) if minute.to_s().length() == 1%>
-      <option value= <%="#{minute}"%> ><%= minute  %> </option>
-    <% end %>
-  </select>
+  <div class="grid-row">
+    <div class="cell">
+      <input type="submit" value="Confirm changes">
+    </div>
+  </div>
 
-  <br><br>
-
-  <!-- <label for="spaces">Spaces: </label>
-  <input id="spaces" type="number" name="spaces" value="20" readonly>
-  <br><br> -->
-
-  <input type="submit" value="Confirm changes">
+</div>
 
 </form>

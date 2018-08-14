@@ -5,76 +5,99 @@
 
 <!-- need to submit gymclass_id and studio_id when we execute the form but don't need these to be shown -->
 
+<div class="grid">
+
   <label for="gymclass_id"></label>
   <input id="gymclass_id" type="hidden" name="gymclass_id" value="<%= @session.gymclass_id %>" readonly>
 
   <label for="studio-id"></label>
   <input id="studio-id" type="hidden" name="studio_id" value="<%= @session.studio_id %>" readonly>
 
-  <label for="spaces">Spaces: </label>
-  <input id="spaces" type="number" name="spaces" value="<%= @session.spaces %>" readonly>
+  <div class="grid-row">
+    <div class="cell-left">
+      <label for="spaces">Spaces: </label>
+    </div>
+    <div class="cell-right">
+      <input id="spaces" type="number" name="spaces" value="<%= @session.spaces %>" readonly>
+    </div>
+  </div>
 
-  <br><br>
+  <div class="grid-row">
+    <div class="cell-left">
+      <label for="date-select">Date:</label>
+    </div>
+    <div class="cell-right">
+      <input id="date-select" type="date" name ="date" value="<%= @session.year() %>-<%= @session.month() %>-<%= @session.day() %>" required>
+    </div>
+  </div>
 
-  <label for="date-select">Date:</label>
-  <input id="date-select" type="date" name ="date" value="<%= @session.year() %>-<%= @session.month() %>-<%= @session.day() %>" required>
+  <div class="grid-row">
+    <div class="cell-left">
+      <label for="start-time"> Start time: </label>
+    </div>
+    <div class="cell-right">
+      <select id="start-hour" name="start_hour" value ="<%= @session.start_hour() %>" required>
+        <option value="<%= @session.start_hour() %>" selected> <%= @session.start_hour() %> </option>
 
-  <br><br>
+        <% hours = [*6..21] %>
+        <% hours.each do |hour|  %>
+          <% hour = ("0"+hour.to_s()) if hour.to_s().length() == 1%>
+          <% unless hour == @session.start_hour() %>
+            <option value= <%="#{hour}"%> ><%= hour  %> </option>
+          <% end %>
+        <% end %>
+      </select>
+      <select id="start-minute" name="start_minute" value ="<%= @session.start_minute() %>" required>
+        <option value="<%= @session.start_minute() %>" selected> <%= @session.start_minute() %> </option>
 
-  <label for="start-time"> Start time: </label>
-  <select id="start-hour" name="start_hour" value ="<%= @session.start_hour() %>" required>
-    <option value="<%= @session.start_hour() %>" selected> <%= @session.start_hour() %> </option>
+        <% minutes = (0..60).step(5).to_a() %>
+        <% minutes.each do |minute|  %>
+          <% minute = ("0"+minute.to_s()) if minute.to_s().length() == 1%>
+          <% unless minute == @session.start_minute() %>
+            <option value= <%="#{minute}"%> ><%= minute  %> </option>
+          <% end %>
+        <% end %>
+      </select>
+    </div>
+  </div>
 
-    <% hours = [*6..21] %>
-    <% hours.each do |hour|  %>
-      <% hour = ("0"+hour.to_s()) if hour.to_s().length() == 1%>
-      <% unless hour == @session.start_hour() %>
-        <option value= <%="#{hour}"%> ><%= hour  %> </option>
-      <% end %>
-    <% end %>
-  </select>
-  <select id="start-minute" name="start_minute" value ="<%= @session.start_minute() %>" required>
-    <option value="<%= @session.start_minute() %>" selected> <%= @session.start_minute() %> </option>
+  <div class="grid-row">
+    <div class="cell-left">
+      <label for="end-time"> End time: </label>
+    </div>
+    <div class="cell-right">
+      <select id="end-hour" name="end_hour" value ="<%= @session.end_hour() %>" required>
+        <option value="<%= @session.end_hour() %>" selected> <%= @session.end_hour() %> </option>
 
-    <% minutes = (0..60).step(5).to_a() %>
-    <% minutes.each do |minute|  %>
-      <% minute = ("0"+minute.to_s()) if minute.to_s().length() == 1%>
-      <% unless minute == @session.start_minute() %>
-        <option value= <%="#{minute}"%> ><%= minute  %> </option>
-      <% end %>
-    <% end %>
-  </select>
+        <% hours = [*1..24] %>
+        <% hours.each do |hour|  %>
+          <% hour = ("0"+hour.to_s()) if hour.to_s().length() == 1%>
+          <% unless hour == @session.end_hour() %>
+            <option value= <%="#{hour}"%> ><%= hour  %> </option>
+          <% end %>
+        <% end %>
+      </select>
+      <select id="end-minute" name="end_minute" value ="<%= @session.end_minute() %>" required>
+        <option value="<%= @session.end_minute() %>" selected> <%= @session.end_minute() %> </option>
 
-  <br><br>
+        <% minutes = (0..60).step(5).to_a() %>
+        <% minutes.each do |minute|  %>
+          <% minute = ("0"+minute.to_s()) if minute.to_s().length() == 1%>
+          <% unless minute == @session.end_minute() %>
+            <option value= <%="#{minute}"%> ><%= minute  %> </option>
+          <% end %>
+        <% end %>
+      </select>    </div>
+  </div>
 
-  <label for="end-time"> End time: </label>
-  <select id="end-hour" name="end_hour" value ="<%= @session.end_hour() %>" required>
-    <option value="<%= @session.end_hour() %>" selected> <%= @session.end_hour() %> </option>
-
-    <% hours = [*1..24] %>
-    <% hours.each do |hour|  %>
-      <% hour = ("0"+hour.to_s()) if hour.to_s().length() == 1%>
-      <% unless hour == @session.end_hour() %>
-        <option value= <%="#{hour}"%> ><%= hour  %> </option>
-      <% end %>
-    <% end %>
-  </select>
-  <select id="end-minute" name="end_minute" value ="<%= @session.end_minute() %>" required>
-    <option value="<%= @session.end_minute() %>" selected> <%= @session.end_minute() %> </option>
-
-    <% minutes = (0..60).step(5).to_a() %>
-    <% minutes.each do |minute|  %>
-      <% minute = ("0"+minute.to_s()) if minute.to_s().length() == 1%>
-      <% unless minute == @session.end_minute() %>
-        <option value= <%="#{minute}"%> ><%= minute  %> </option>
-      <% end %>
-    <% end %>
-  </select>
-
-  <br><br>
+  <div class="grid-row">
+    <div class="cell">
+      <input type="submit" value="Confirm changes">
+    </div>
+  </div>
 
 
 
-  <input type="submit" value="Confirm changes">
+</div>
 
 </form>
