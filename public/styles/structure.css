@@ -55,6 +55,10 @@ section {
 	margin-right: 13.5em;*/
 }
 
+.title a:link {
+  color: black;
+}
+
 
 .timetable {
   border: 1px solid #bbb;

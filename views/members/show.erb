@@ -1,18 +1,19 @@
-<p>Name: <%= @member.pretty_name() %> </p>
-<p> Membership type: <%= @member.member_type() %> </p>
-<p> Phone number: <%= @member.phone_number() %> </p>
-<p> Address: <%= @member.address() %></p>
-<p> Date of birth: <%= @member.dob()
-%></p>
+<figure align="center">
+    <img src="<%=@member.image()%>" alt = "<%=@member.pretty_name()%>" width='300' height='300' />
+    <p>Name: <%= @member.pretty_name() %> </p>
+    <p> Membership type: <%= @member.member_type() %> </p>
+    <p> Phone number: <%= @member.phone_number() %> </p>
+    <p> Address: <%= @member.address() %></p>
+    <p> Date of birth: <%= @member.dob()
+    %></p>
 
-<img src= "<%=@member.image()%>" alt = "<%=@member.pretty_name()%>" width='300' height='300' >
+    <form action="/gym/members/<%= @member.id %>/delete" method="post">
+      <input type="submit" value="Delete member">
+    </form>
 
-<form action="/gym/members/<%= @member.id %>/delete" method="post">
-  <input type="submit" value="Delete member">
-</form>
+    <br>
 
-<br>
-
-<form action="/gym/members/<%= @member.id%>/edit" method="get">
-  <input type="submit" value="Edit member">
-</form>
+    <form action="/gym/members/<%= @member.id%>/edit" method="get">
+      <input type="submit" value="Edit member">
+    </form>
+</figure>

@@ -1,16 +1,20 @@
-<h1>Details for <%= @gymclass.name() %></h1>
+<figure align="center">
+  <img src= "<%=@gymclass.image()%>" alt = "<%=@gymclass.name()%>" width='300' height='300' >
 
-<p>Capacity: <%= @gymclass.capacity %></p>
-<p> Description: <%= @gymclass.description() %> </p>
 
-<img src= "<%=@gymclass.image()%>" alt = "<%=@gymclass.name()%>" width='300' height='300' >
+  <h1><%= @gymclass.name() %></h1>
 
-<form action="/gym/classes/<%= @gymclass.id %>/delete" method="post">
-  <input type="submit" value="Delete class">
-</form>
+  <p>Capacity: <%= @gymclass.capacity %></p>
+  <p> Description: <%= @gymclass.description() %> </p>
 
-<br>
+  <form action="/gym/classes/<%= @gymclass.id %>/delete" method="post">
+    <input type="submit" value="Delete class">
+  </form>
 
-<form action="/gym/classes/<%= @gymclass.id%>/edit" method="get">
-  <input type="submit" value="Edit class">
-</form>
+  <br>
+
+  <form action="/gym/classes/<%= @gymclass.id%>/edit" method="get">
+    <input type="submit" value="Edit class">
+  </form>
+
+</figure>
