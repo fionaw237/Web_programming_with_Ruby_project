@@ -232,11 +232,11 @@ session3.save()
 session4.save()
 
 member1.book_class(session1)
-# member1.book_class(session4)
-# member2.book_class(session2)
-# member2.book_class(session3)
-# member3.book_class(session1)
-# member3.book_class(session3)
+member1.book_class(session4)
+member2.book_class(session2)
+member2.book_class(session3)
+member3.book_class(session1)
+member3.book_class(session3)
 
 
 binding.pry

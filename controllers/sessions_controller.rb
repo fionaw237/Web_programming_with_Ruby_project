@@ -64,7 +64,11 @@ end
 
 # Update
 post '/gym/:id' do
+  p params[:date]
   @session = Session.new(params)
+  @session.year = params[:date][0..3]
+  @session.month = params[:date][5..6]
+  @session.day = params[:date][8..9]
   @session.update()
   erb(:"sessions/show")
 end

@@ -1,4 +1,4 @@
-<h1>Edit session: <%= @session.gymclass.name()%> at <%= @session.pretty_time()%> on <%= @session.day()%></h1>
+<h1>Edit session: <%= @session.gymclass.name()%> at <%= @session.pretty_time()%> on <%= @session.day()%>/<%= @session.month() %>/<%= @session.year() %></h1>
 
 
 <form action="/gym/<%= @session.id()%>" method="post">
@@ -16,28 +16,60 @@
 
   <br><br>
 
-  <label for="day-select"> Day: </label>
-  <select id="day-select" name="day" value ="<%= @session.day() %>" required>
-    <option value="<%= @session.day() %>" selected> <%= @session.day() %> </option>
+  <label for="date-select">Date:</label>
+  <input id="date-select" type="date" name ="date" value="<%= @session.year() %>-<%= @session.month() %>-<%= @session.day() %>">
 
-    <% days = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"] %>
-    <% days.each do |day_name|  %>
-      <% unless day_name == @session.day() %>
-        <option value= <%="#{day_name}"%> ><%= day_name  %> </option>
+  <br><br>
+
+  <label for="start-time"> Start time: </label>
+  <select id="start-hour" name="start_hour" value ="<%= @session.start_hour() %>" required>
+    <option value="<%= @session.start_hour() %>" selected> <%= @session.start_hour() %> </option>
+
+    <% hours = [*1..24] %>
+    <% hours.each do |hour|  %>
+      <% unless hour == @session.start_hour().to_i() %>
+        <option value= <%="#{hour}"%> ><%= hour  %> </option>
+      <% end %>
+    <% end %>
+  </select>
+  <select id="start-minute" name="start_minute" value ="<%= @session.start_minute() %>" required>
+    <option value="<%= @session.start_minute() %>" selected> <%= @session.start_minute() %> </option>
+
+    <% minutes = (0..60).step(5).to_a() %>
+    <% minutes.each do |minute|  %>
+      <% unless minute == @session.start_minute().to_i() %>
+        <option value= <%="#{minute}"%> ><%= minute  %> </option>
       <% end %>
     <% end %>
   </select>
 
   <br><br>
 
-  <label for="start-time"> Start time: </label>
-  <input id ="start-time" type="text" name="start_time" value="<%= @session.start_time() %>" required>
-
-  <br><br>
-
   <label for="end-time"> End time: </label>
-  <input id ="end-time" type="text" name="end_time" value="<%= @session.end_time() %>" required>
+  <select id="end-hour" name="end_hour" value ="<%= @session.end_hour() %>" required>
+    <option value="<%= @session.end_hour() %>" selected> <%= @session.end_hour() %> </option>
+
+    <% hours = [*1..24] %>
+    <% hours.each do |hour|  %>
+      <% unless hour == @session.end_hour().to_i() %>
+        <option value= <%="#{hour}"%> ><%= hour  %> </option>
+      <% end %>
+    <% end %>
+  </select>
+  <select id="end-minute" name="end_minute" value ="<%= @session.end_minute() %>" required>
+    <option value="<%= @session.end_minute() %>" selected> <%= @session.end_minute() %> </option>
+
+    <% minutes = (0..60).step(5).to_a() %>
+    <% minutes.each do |minute|  %>
+      <% unless minute == @session.end_minute().to_i() %>
+        <option value= <%="#{minute}"%> ><%= minute  %> </option>
+      <% end %>
+    <% end %>
+  </select>
+
   <br><br>
+
+
 
   <input type="submit" value="Confirm changes">
 
