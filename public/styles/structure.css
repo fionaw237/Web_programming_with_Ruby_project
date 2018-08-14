@@ -72,6 +72,7 @@ section {
 	margin-right: 13.5em;*/
 }
 
+
 .title a:link {
   color: darkslategrey;
 }
@@ -82,6 +83,10 @@ section {
   margin: 20px;
   padding: 20px;
   border-radius: 25px;
+}
+
+.timetable th {
+    text-align: left;
 }
 
 /*.container {

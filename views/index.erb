@@ -2,14 +2,23 @@
 
 <div class="timetable">
 
-  <% @sessions.each do |session| %>
-  <p> <%= session.day() %> </p>
-  <p> <%= session.pretty_time() %> </p>
-  <p> <%= session.gymclass.name() %> </p>
-  <p> <%= session.spaces()
-  %> spaces left</p>
-  <p> <a href="/gym/<%= session.id %>"> View more details</a></p>
-  <hr>
-  <% end %>
+  <table style="width:100%">
+
+    <tr>
+      <th>Day/Time</th>
+      <th>Class</th>
+      <th>Spaces</th>
+      <th> </th>
+    </tr>
+
+    <% @sessions.each do |session| %>
+    <tr>
+      <td><%= session.day() %>, <%= session.pretty_time() %></td>
+      <td> <%= session.gymclass.name() %> </td>
+      <td> <%= session.spaces() %> </td>
+      <td><a href="/gym/<%= session.id %>"> View more details</a></td>
+    </tr>
+    <% end %>
+  </table>
 
 </div>
