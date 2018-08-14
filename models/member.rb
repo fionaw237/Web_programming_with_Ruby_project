@@ -42,8 +42,7 @@ class Member
 
   def can_book?(session)
     if @member_type == "standard"
-      session_hour = session.start_time[0..1].to_i()
-      if (session_hour >= 9) && (session_hour < 17)
+      if (session.start_hour().to_i() >= 9) && (session.end_hour().to_i() < 17)
         return true
       else
         return false
