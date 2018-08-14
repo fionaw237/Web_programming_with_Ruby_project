@@ -4,7 +4,9 @@
   <label for="member-select"></label>
   <select id="member-select" name="new_member_id">
     <% @members.each do |member| %>
-      <option value="<%=member.id%>"><%= member.pretty_name() %> </option>
+      <% if member.can_book?(@session) %>
+        <option value="<%=member.id%>"><%= member.pretty_name() %> </option>
+      <% end %>
     <% end %>
   </select>
 

@@ -40,11 +40,28 @@ class Member
     SqlRunner.run(sql, values)
   end
 
+  def can_book?(session)
+    if @member_type == "standard"
+      session_hour = session.start_time[0..1].to_i()
+      if (session_hour >= 9) && (session_hour < 17)
+        return true
+      else
+        return false
+      end
+    else
+      return true
+    end
+  end
+
   def book_class(session)
-    booking = Booking.new('member_id' => @id, 'session_id' => session.id())
-    booking.save()
-    session.add_member()
-    update()
+    if (@member_type == "standard") && (can_book?(session) == false)
+      return "out of hours"
+    else
+      booking = Booking.new('member_id' => @id, 'session_id' => session.id())
+      booking.save()
+      session.add_member()
+      update()
+    end
   end
 
   def self.delete_all()
