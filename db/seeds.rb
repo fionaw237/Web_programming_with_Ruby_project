@@ -49,26 +49,96 @@ member2.save()
 member3.save()
 
 
-class1 = GymClass.new(
+spin = GymClass.new(
   {
     'name' => 'Spin',
     'capacity' => 15,
     'description' => 'bikes!',
-    'image' => "~/codeclan_work/ruby_project/public/images/Spin-Class.jpg"
+    'image' => "/images/Spin-Class.jpg"
   }
 )
 
-class2 = GymClass.new(
+insanity = GymClass.new(
   {
     'name' => 'Insanity',
-    'capacity' => 20,
+    'capacity' => 22,
     'description' => 'Insane!',
-    'image' => '~/codeclan_work/ruby_project/public/images/Insanity.jpg'
+    'image' => '/images/Insanity.jpg'
   }
 )
 
-class1.save()
-class2.save()
+yoga = GymClass.new(
+  {
+    'name' => 'Yoga',
+    'capacity' => 18,
+    'description' => 'Relax!',
+    'image' => '/images/yoga.jpeg'
+  }
+)
+
+bodypump = GymClass.new(
+  {
+    'name' => 'Bodypump',
+    'capacity' => 22,
+    'description' => 'bodypump!',
+    'image' => '/images/bodypump.jpg'
+  }
+)
+
+boxercise = GymClass.new(
+  {
+    'name' => 'Boxercise',
+    'capacity' => 22,
+    'description' => 'boxing!',
+    'image' => '/images/boxercise.jpg'
+  }
+)
+
+circuits = GymClass.new(
+  {
+    'name' => 'Circuits',
+    'capacity' => 24,
+    'description' => 'circuits!',
+    'image' => '/images/circuits.jpg'
+  }
+)
+
+p90x = GymClass.new(
+  {
+    'name' => 'P90X',
+    'capacity' => 24,
+    'description' => 'P90X!',
+    'image' => '/images/p90x.png'
+  }
+)
+
+pilates = GymClass.new(
+  {
+    'name' => 'Pilates',
+    'capacity' => 18,
+    'description' => 'pilates!',
+    'image' => '/images/pilates.jpeg'
+  }
+)
+
+zumba = GymClass.new(
+  {
+    'name' => 'Zumba',
+    'capacity' => 18,
+    'description' => 'dance!',
+    'image' => '/images/Zumba.png'
+  }
+)
+
+spin.save()
+insanity.save()
+yoga.save()
+bodypump.save()
+boxercise.save()
+circuits.save()
+p90x.save()
+pilates.save()
+zumba.save()
 
 studio1 = Studio.new(
   {
@@ -80,45 +150,45 @@ studio1.save()
 
 session1 = Session.new(
   {
-    'gymclass_id' => class1.id(),
+    'gymclass_id' => spin.id(),
     'studio_id' => studio1.id(),
     'day' => 'Mon',
     'start_time' => '08:00',
     'end_time' => '09:00',
-    'spaces' => class1.capacity()
+    'spaces' => spin.capacity()
   }
 )
 
 session2 = Session.new(
   {
-    'gymclass_id' => class1.id(),
+    'gymclass_id' => spin.id(),
     'studio_id' => studio1.id(),
     'day' => 'Mon',
     'start_time' => '14:00',
     'end_time' => '15:00',
-    'spaces' => class1.capacity()
+    'spaces' => spin.capacity()
   }
 )
 
 session3 = Session.new(
   {
-    'gymclass_id' => class2.id(),
+    'gymclass_id' => insanity.id(),
     'studio_id' => studio1.id(),
     'day' => 'Mon',
     'start_time' => '09:00',
     'end_time' => '10:00',
-    'spaces' => class2.capacity()
+    'spaces' => insanity.capacity()
   }
 )
 
 session4 = Session.new(
   {
-    'gymclass_id' => class2.id(),
+    'gymclass_id' => insanity.id(),
     'studio_id' => studio1.id(),
     'day' => 'Mon',
     'start_time' => '15:00',
     'end_time' => '16:00',
-    'spaces' => class2.capacity()
+    'spaces' => insanity.capacity()
   }
 )
 

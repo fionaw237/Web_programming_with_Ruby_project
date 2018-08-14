@@ -1,5 +1,9 @@
 <h1>Classes Offered</h1>
 
+<form action="/gym/classes/new" method="get">
+  <input type="submit" value="Add new class">
+</form>
+
 <% counter = 1 %>
 
 <% @gymclasses.each do |gymclass| %>
@@ -8,7 +12,3 @@
 <hr>
 <% counter += 1 %>
 <% end %>
-
-<form action="/gym/classes/new" method="get">
-  <input type="submit" value="Add new class">
-</form>

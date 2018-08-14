@@ -18,6 +18,7 @@ end
 #post
 post '/gym/classes' do
   new_class = GymClass.new(params)
+  new_class.image = "/images/" + params[:image]
   new_class.save()
   redirect "/gym/classes"
 end
