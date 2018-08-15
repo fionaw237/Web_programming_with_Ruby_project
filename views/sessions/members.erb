@@ -1,4 +1,4 @@
-<h1>Members attending <%= @session.gymclass.name()%> at <%= @session.pretty_time()%> on <%= @session.day()%></h1>
+<h1>Members attending <%= @session.gymclass.name()%> at <%= @session.pretty_time()%> on <%= @session.pretty_date()%></h1>
 
 <% counter = 1 %>
 <% @session.members().each() do |member| %>

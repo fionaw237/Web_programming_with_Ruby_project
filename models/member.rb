@@ -63,6 +63,25 @@ class Member
     end
   end
 
+  # def sessions()
+  #   sql = 'SELECT sessions.* FROM sessions INNER JOIN
+  #   bookings ON bookings.session_id = sessions.id
+  #   WHERE bookings.member_id = $1'
+  #   values = [@id]
+  #   results = SqlRunner.run(sql, values)
+  #   return results.map {|member| Session.new(member)}
+  # end
+
+  def in_session?(session)
+    attending = session.members()
+    attending.each do |attendee|
+      if @id == attendee.id
+        return true
+      end
+    end
+    return false
+  end
+
   def self.delete_all()
     sql = 'DELETE FROM members'
     SqlRunner.run(sql)

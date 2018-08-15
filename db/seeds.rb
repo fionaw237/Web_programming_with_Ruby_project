@@ -227,7 +227,7 @@ session3 = Session.new(
 
 session4 = Session.new(
   {
-    'gymclass_id' => insane.id(),
+    'gymclass_id' => circuits.id(),
     'studio_id' => studio1.id(),
     'year' => '2018',
     'month' => '08',
@@ -236,7 +236,22 @@ session4 = Session.new(
     'start_minute' => '00',
     'end_hour' => '15',
     'end_minute' => '45',
-    'spaces' => insane.capacity()
+    'spaces' => circuits.capacity()
+  }
+)
+
+session5 = Session.new(
+  {
+    'gymclass_id' => yoga.id(),
+    'studio_id' => studio1.id(),
+    'year' => '2018',
+    'month' => '08',
+    'day' => '21',
+    'start_hour' => '10',
+    'start_minute' => '00',
+    'end_hour' => '11',
+    'end_minute' => '00',
+    'spaces' => yoga.capacity()
   }
 )
 
@@ -246,9 +261,11 @@ session1.save()
 session2.save()
 session3.save()
 session4.save()
+session5.save()
 
 member1.book_class(session1)
 member1.book_class(session4)
+member1.book_class(session3)
 member2.book_class(session2)
 member2.book_class(session3)
 member3.book_class(session1)
@@ -257,7 +274,7 @@ member4.book_class(session2)
 member4.book_class(session3)
 member5.book_class(session1)
 member5.book_class(session2)
-member6.book_class(session1)
+member6.book_class(session2)
 member6.book_class(session4)
 
 

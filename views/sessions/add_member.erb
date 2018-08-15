@@ -4,8 +4,11 @@
   <label for="member-select"></label>
   <select id="member-select" name="new_member_id">
     <% @members.each do |member| %>
-      <% if member.can_book?(@session) %>
-        <option value="<%=member.id%>"><%= member.pretty_name() %> </option>
+    <!-- only allow member to be added if they're not already booked or if they have the correct membership level -->
+      <% if !member.in_session?(@session) %>
+        <% if member.can_book?(@session) %>
+          <option value="<%=member.id%>"><%= member.pretty_name() %> </option>
+        <% end %>
       <% end %>
     <% end %>
   </select>
