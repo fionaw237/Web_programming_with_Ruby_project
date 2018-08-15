@@ -12,7 +12,7 @@
       <th> </th>
     </tr>
 
-    <% @sessions = @sessions.sort_by {|session| session.pretty_date()} %>
+    <% @sessions = @sessions.sort_by {|session| [session.pretty_date(), session.pretty_time()]} %>
 
     <% @sessions.each do |session| %>
     <tr>
