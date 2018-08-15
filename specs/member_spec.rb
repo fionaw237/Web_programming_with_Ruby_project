@@ -42,7 +42,7 @@ class MemberTest < MiniTest::Test
   end
 
   def test_has_pretty_name()
-    assert_equal("Fiona Wilson", @member1.pretty_name())
+    assert_equal("Wilson, Fiona", @member1.pretty_name())
   end
 
 end

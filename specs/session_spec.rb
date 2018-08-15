@@ -14,24 +14,44 @@ class SessionTest < MiniTest::Test
     # )
     @session1 = Session.new(
       {
-        'day' => 'Mon',
-        'start_time' => '08:00',
-        'end_time' => '09:00',
+        'year' => '2018',
+        'month' => '08',
+        'day' => '20',
+        'start_hour' => '08',
+        'start_minute' => '00',
+        'end_hour' => '09',
+        'end_minute' => '00',
         'spaces' => 20
       }
     )
   end
 
+  def test_has_year()
+    assert_equal("2018", @session1.year())
+  end
+
+  def test_has_month()
+    assert_equal("08", @session1.month())
+  end
+
   def test_has_day()
-    assert_equal("Mon", @session1.day())
+    assert_equal("20", @session1.day())
   end
 
-  def test_has_start_time()
-    assert_equal("08:00", @session1.start_time())
+  def test_has_start_hour()
+    assert_equal("08", @session1.start_hour())
   end
 
-  def test_has_end_time()
-    assert_equal("09:00", @session1.end_time())
+  def test_has_start_minute()
+    assert_equal("00", @session1.end_minute())
+  end
+
+  def test_has_end_hour()
+    assert_equal("09", @session1.end_hour())
+  end
+
+  def test_has_end_minute()
+    assert_equal("00", @session1.end_minute())
   end
 
   def test_has_spaces()
