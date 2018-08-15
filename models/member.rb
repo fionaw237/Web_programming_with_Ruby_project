@@ -18,7 +18,7 @@ class Member
   end
 
   def pretty_name()
-    return "#{@last_name}, #{@first_name} "
+    return "#{@last_name}, #{@first_name}"
   end
 
   def save()
