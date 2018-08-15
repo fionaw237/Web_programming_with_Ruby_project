@@ -2,6 +2,10 @@ main {
   height:100%;
 }
 
+p {
+  color: darkslategrey;
+}
+
 body {
   /*color: red;*/
   background-color: lightgrey;

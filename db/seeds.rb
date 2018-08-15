@@ -95,7 +95,7 @@ spin = GymClass.new(
   {
     'name' => 'Spin',
     'capacity' => 15,
-    'description' => 'An indoor cycling workout where you control the intensity. It’s fun, low impact and you will burn lots of calories!',
+    'description' => 'A fun, indoor cycling workout - low impact and you will burn lots of calories!',
     'image' => "/images/spin.jpg"
   }
 )
@@ -104,7 +104,7 @@ insane = GymClass.new(
   {
     'name' => 'Insane Fitness',
     'capacity' => 22,
-    'description' => 'Cardio-based total body conditioning program based on the principles of high intensity interval training. Insanity pushes the participant to new training heights, resulting in more calories burned, faster results, and a more efficient metabolism.',
+    'description' => 'Total body workout based on the principles of high intensity interval training. Insane fitness will push you to new training heights, resulting in more calories burned and faster results.',
     'image' => '/images/insanity.jpg'
   }
 )
@@ -113,7 +113,7 @@ yoga = GymClass.new(
   {
     'name' => 'Yoga',
     'capacity' => 18,
-    'description' => 'In this class, postures are practiced to align, strengthen and promote flexibility in the body. Breathing techniques and meditation are also integrated. You can expect an emphasis on simplicity, repetition, and ease of movement.',
+    'description' => 'In this class, you will practice postures to align, strengthen and promote flexibility in the body. You will also work on breathing techniques and meditation.',
     'image' => '/images/yoga.jpeg'
   }
 )
@@ -131,7 +131,7 @@ boxercise = GymClass.new(
   {
     'name' => 'Boxercise',
     'capacity' => 22,
-    'description' => 'Boxercise is an exercise class based on the training concepts boxers use to keep fit. Classes can take a variety of formats but a typical one may involve shadow-boxing, skipping, hitting pads, kicking punchbags, press-ups, shuttle-runs and sit-ups',
+    'description' => 'Boxercise is an exercise class based on the training concepts boxers use to keep fit. Will typically involve shadow-boxing, skipping, hitting pads, kicking punchbags, press-ups, shuttle-runs and sit-ups.',
     'image' => '/images/boxercise.jpg'
   }
 )
@@ -140,7 +140,7 @@ circuits = GymClass.new(
   {
     'name' => 'Circuits',
     'capacity' => 24,
-    'description' => 'In a Circuits class, the studio is set up with various exercise stations, you will move around each station and workout different muscle groups. You will work hard and test both your cardio and strength for an all-round challenge.',
+    'description' => 'In this class, the studio is set up with various exercise stations. You will move around each station, working on different muscle groups. You will test both your cardio fitness and strength for an all-round challenge.',
     'image' => '/images/circuits.jpg'
   }
 )
@@ -149,7 +149,7 @@ pilates = GymClass.new(
   {
     'name' => 'Pilates',
     'capacity' => 18,
-    'description' => 'If practiced with consistency, Pilates improves flexibility, builds strength and develops control and endurance in the entire body. It puts emphasis on alignment, breathing, developing a strong core, and improving coordination and balance.',
+    'description' => 'If done regularly, Pilates will improve your flexibility and strength, and will develop control and endurance in the your whole body. It puts emphasis on alignment, breathing, developing a strong core, and improving your coordination and balance.',
     'image' => '/images/pilates2.jpeg'
   }
 )
@@ -158,7 +158,7 @@ dance = GymClass.new(
   {
     'name' => 'Dance Fit',
     'capacity' => 18,
-    'description' => 'Zumba is a fitness program that combines Latin and international music with dance moves. Zumba routines incorporate interval training — alternating fast and slow rhythms — and resistance training',
+    'description' => 'Dance Fit combines Latin and international music with dance moves. It incorporates both interval training — alternating fast and slow rhythms — and resistance training.',
     'image' => '/images/zumba.jpg'
   }
 )
@@ -253,6 +253,12 @@ member2.book_class(session2)
 member2.book_class(session3)
 member3.book_class(session1)
 member3.book_class(session3)
+member4.book_class(session2)
+member4.book_class(session3)
+member5.book_class(session1)
+member5.book_class(session2)
+member6.book_class(session1)
+member6.book_class(session4)
 
 
 binding.pry

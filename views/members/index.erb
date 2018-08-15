@@ -1,5 +1,6 @@
 <h1>Members Index</h1>
 
+<p><%= Member.all().count %> members currently registered</p>
 
 <% @members = @members.sort_by {|member| member.pretty_name()} %>
 
